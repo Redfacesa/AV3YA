@@ -1,16 +1,17 @@
 'use client';
 
-import { Instagram, Facebook } from 'lucide-react';
-import { AV3YA_SOCIAL_LINKS } from '@/lib/social';
+import { Instagram, Facebook, Mail } from 'lucide-react';
+import { AV3YA_SOCIAL, AV3YA_SOCIAL_LINKS } from '@/lib/social';
 
 export default function InspirationPage() {
   const placeholders = Array.from({ length: 12 }, (_, i) => i);
+  const primarySocial = AV3YA_SOCIAL_LINKS[0];
 
   return (
     <div className="pt-24 pb-16">
       <div className="section-padding mb-8">
         <h1 className="font-display text-4xl mb-2">Fashion Inspiration</h1>
-        <p className="text-white/50 mb-6">Seasonal outfits, trending looks, and AI recommendations</p>
+        <p className="text-white/50 mb-6">Seasonal outfits, trending looks, and AV3YA Syndicate energy</p>
         <div className="flex flex-wrap gap-3">
           {AV3YA_SOCIAL_LINKS.map((link) => {
             const Icon = link.id === 'instagram' ? Instagram : Facebook;
@@ -27,6 +28,13 @@ export default function InspirationPage() {
               </a>
             );
           })}
+          <a
+            href={AV3YA_SOCIAL.email}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm hover:border-av3ya-neon/40 transition-colors"
+          >
+            <Mail size={16} className="text-av3ya-neon" />
+            av3ya.inc@gmail.com
+          </a>
         </div>
       </div>
 
@@ -40,17 +48,23 @@ export default function InspirationPage() {
           </div>
         ))}
       </div>
-      <p className="text-center text-white/30 text-sm mt-8">
-        More looks on{' '}
-        <a
-          href={AV3YA_SOCIAL_LINKS[0].href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-av3ya-neon hover:text-white transition-colors"
-        >
-          @pangolinclothing_sa
-        </a>
-      </p>
+      {primarySocial ? (
+        <p className="text-center text-white/30 text-sm mt-8">
+          More looks on{' '}
+          <a
+            href={primarySocial.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-av3ya-neon hover:text-white transition-colors"
+          >
+            {primarySocial.handle}
+          </a>
+        </p>
+      ) : (
+        <p className="text-center text-white/30 text-sm mt-8">
+          Follow AV3YA for drops and lookbooks. Instagram link coming soon.
+        </p>
+      )}
     </div>
   );
 }
