@@ -14,14 +14,18 @@ export default function Hero() {
           alt="AV3YA neon city streetwear"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center scale-[1.02]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+        {/* Lighter overlays so the hero art reads clearly */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/25" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(255,45,149,0.22),transparent_55%)]" />
+        <div className="absolute inset-y-0 left-0 w-[45%] bg-gradient-to-r from-black/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
       </div>
 
-      <span className="vertical-scroll hidden lg:block" aria-hidden>
+      <span className="vertical-scroll hidden lg:block text-av3ya-neon/50" aria-hidden>
         SCROLL
       </span>
 
@@ -35,13 +39,13 @@ export default function Hero() {
           <p className="text-av3ya-neon text-sm sm:text-base font-display tracking-[0.35em] uppercase mb-3 anime-glow-text">
             One of a kind
           </p>
-          <p className="text-white/45 text-xs tracking-[0.25em] mb-6">ユニークなもの</p>
+          <p className="text-av3ya-pink/70 text-xs tracking-[0.25em] mb-6">ユニークなもの</p>
 
-          <h1 className="font-display text-[clamp(3.5rem,12vw,7rem)] leading-[0.9] tracking-tight text-white mb-6">
+          <h1 className="font-display text-[clamp(3.5rem,12vw,7rem)] leading-[0.9] tracking-tight text-white mb-6 drop-shadow-[0_0_30px_rgba(255,45,149,0.25)]">
             AV3YA
           </h1>
 
-          <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-md mb-10">
+          <p className="text-white/85 text-sm sm:text-base leading-relaxed max-w-md mb-10">
             A brand for the outcasts, the originals, the ones who create their own path. Different by design.
             Unapologetically original.
           </p>

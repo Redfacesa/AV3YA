@@ -1,8 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { AV3YA_SOCIAL } from '@/lib/social';
+import type { StorefrontContent } from '@/lib/site-content';
 
-export default function Footer() {
+type Props = {
+  social?: Pick<StorefrontContent, 'instagram' | 'tiktok' | 'youtube'>;
+};
+
+export default function Footer({ social }: Props) {
+  const links = [
+    social?.instagram ? { label: 'Instagram', href: social.instagram } : null,
+    social?.tiktok ? { label: 'TikTok', href: social.tiktok } : null,
+    social?.youtube ? { label: 'YouTube', href: social.youtube } : null,
+  ].filter(Boolean) as Array<{ label: string; href: string }>;
+
   return (
     <footer className="bg-black border-t border-white/10">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-14 lg:py-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
@@ -13,7 +23,7 @@ export default function Footer() {
               alt="AV3YA"
               width={160}
               height={48}
-              className="h-10 w-auto brightness-0 invert hue-rotate-[300deg] saturate-[4]"
+              className="h-10 w-auto object-contain"
             />
           </Link>
           <p className="text-white/40 text-xs max-w-xs leading-relaxed">
@@ -35,7 +45,7 @@ export default function Footer() {
             <ul className="space-y-2 text-white/60 font-medium tracking-wide normal-case">
               <li><Link href="/terms" className="hover:text-av3ya-neon transition-colors">Returns</Link></li>
               <li><Link href="/terms" className="hover:text-av3ya-neon transition-colors">FAQ</Link></li>
-              <li><a href={AV3YA_SOCIAL.email} className="hover:text-av3ya-neon transition-colors">Contact</a></li>
+              <li><a href="mailto:av3ya.inc@gmail.com" className="hover:text-av3ya-neon transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>
@@ -49,9 +59,18 @@ export default function Footer() {
           <div>
             <p className="text-white/30 mb-3">Social</p>
             <ul className="space-y-2 text-white/60 font-medium tracking-wide normal-case">
-              <li><span className="text-white/35">Instagram · soon</span></li>
-              <li><span className="text-white/35">TikTok · soon</span></li>
-              <li><a href={AV3YA_SOCIAL.email} className="hover:text-av3ya-neon transition-colors">Email</a></li>
+              {links.length ? (
+                links.map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} target="_blank" rel="noopener noreferrer" className="hover:text-av3ya-neon transition-colors">
+                      {l.label}
+                    </a>
+                  </li>
+                ))
+              ) : (
+                <li><span className="text-white/35">Add links in Admin → Storefront</span></li>
+              )}
+              <li><a href="mailto:av3ya.inc@gmail.com" className="hover:text-av3ya-neon transition-colors">Email</a></li>
             </ul>
           </div>
         </div>

@@ -31,6 +31,12 @@ export default function NewDropSection({ products }: Props) {
               Limited pieces built to be experienced. Upload your first products in Admin to fill this section.
             </p>
             <Av3yaEnterButton href="/shop" label="SHOP NOW" />
+            <Link
+              href="/shop"
+              className="inline-block mt-6 text-[10px] tracking-[0.25em] uppercase text-white/45 hover:text-av3ya-neon transition-colors"
+            >
+              View all products ↗
+            </Link>
           </div>
 
           {drops.length > 0 ? (

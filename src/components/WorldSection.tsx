@@ -3,8 +3,16 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Av3yaEnterButton from '@/components/Av3yaEnterButton';
+import { isDirectVideoFile, resolveVideoEmbedUrl } from '@/lib/site-content';
 
-export default function WorldSection() {
+type Props = {
+  videoUrl?: string | null;
+};
+
+export default function WorldSection({ videoUrl }: Props) {
+  const embed = resolveVideoEmbedUrl(videoUrl);
+  const direct = embed && isDirectVideoFile(embed);
+
   return (
     <section id="world" className="bg-black border-t border-white/10 py-16 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -31,22 +39,37 @@ export default function WorldSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
+          className="relative aspect-[16/10] overflow-hidden border border-white/10 bg-black"
         >
-          <Link
-            href="/#story"
-            className="block relative aspect-[16/10] overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-950 via-black to-av3ya-neon/10 group"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,45,149,0.12),transparent_55%)]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-              <span className="w-16 h-16 rounded-full border-2 border-white/50 flex items-center justify-center text-white text-xl pl-1 group-hover:border-av3ya-neon transition-colors">
+          {embed ? (
+            direct ? (
+              <video src={embed} controls className="w-full h-full object-cover" playsInline />
+            ) : (
+              <iframe
+                src={embed}
+                title="AV3YA world intro"
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )
+          ) : (
+            <Link
+              href="/#story"
+              className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-950 via-black to-av3ya-neon/10 group"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,45,149,0.15),transparent_55%)]" />
+              <span className="relative w-16 h-16 rounded-full border-2 border-white/50 flex items-center justify-center text-white text-xl pl-1 group-hover:border-av3ya-neon transition-colors">
                 ▶
               </span>
-              <span className="text-xs tracking-[0.3em] uppercase text-white/60">World intro · add your video</span>
-            </div>
-            <div className="absolute bottom-4 left-4 text-[10px] text-white/35 tracking-widest">
-              26.2041° S · 28.0473° E
-            </div>
-          </Link>
+              <span className="relative text-xs tracking-[0.3em] uppercase text-white/55">
+                Add video in Admin → Storefront
+              </span>
+            </Link>
+          )}
+          <div className="absolute bottom-4 left-4 text-[10px] text-white/35 tracking-widest pointer-events-none">
+            26.2041° S · 28.0473° E
+          </div>
         </motion.div>
       </div>
     </section>

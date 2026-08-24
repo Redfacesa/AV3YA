@@ -4,6 +4,8 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AV3YA_SOCIAL } from '@/lib/social';
+import { fetchStorefrontContent } from '@/lib/site-content';
+import { getAv3yaConfig, getMerchantIdFromConfig } from '@/lib/platform-config';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-display' });
@@ -22,14 +24,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const config = await getAv3yaConfig();
+  const merchantId = getMerchantIdFromConfig(config);
+  const storefront = merchantId
+    ? await fetchStorefrontContent(merchantId).catch(() => null)
+    : null;
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://av3ya.vercel.app';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ClothingStore',
     name: 'AV3YA',
     url: siteUrl,
-    sameAs: [AV3YA_SOCIAL.instagram].filter(Boolean),
+    sameAs: [storefront?.instagram, storefront?.tiktok, storefront?.youtube].filter(Boolean),
     areaServed: 'ZA',
   };
 
@@ -42,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <Header />
         <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Footer social={storefront ?? undefined} />
       </body>
     </html>
   );

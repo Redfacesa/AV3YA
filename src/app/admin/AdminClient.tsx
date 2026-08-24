@@ -25,6 +25,7 @@ import CategoryManager from '@/components/admin/CategoryManager';
 import SalesDashboard from '@/components/admin/SalesDashboard';
 import RetailPosPanel from '@/components/admin/RetailPosPanel';
 import PayLinkStation from '@/components/admin/PayLinkStation';
+import StorefrontSettings from '@/components/admin/StorefrontSettings';
 import { PANGOLIN_COUNTER_TAP_CODE, type PayStation } from '@/lib/pay-stations';
 import { buildMerchantPortalUrl } from '@/lib/redface-pay';
 
@@ -36,7 +37,7 @@ const NAV = [
   { id: 'tailoring', icon: Scissors, label: 'Tailoring' },
   { id: 'orders', icon: Tag, label: 'Orders' },
   { id: 'customers', icon: Users, label: 'Customers' },
-  { id: 'banners', icon: ImageIcon, label: 'Banners' },
+  { id: 'banners', icon: ImageIcon, label: 'Storefront' },
   { id: 'settings', icon: Settings, label: 'Settings' },
 ];
 
@@ -313,7 +314,11 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
               </div>
             )}
 
-            {!['overview', 'pos', 'orders', 'products', 'categories', 'tailoring', 'settings'].includes(tab) && (
+            {tab === 'banners' && (
+              <StorefrontSettings merchantId={merchantId} />
+            )}
+
+            {!['overview', 'pos', 'orders', 'products', 'categories', 'tailoring', 'settings', 'banners'].includes(tab) && (
               <div className="glass rounded-xl p-8 sm:p-12 text-center text-white/40">
                 <p>{NAV.find((n) => n.id === tab)?.label} management — coming in Phase 2</p>
               </div>
