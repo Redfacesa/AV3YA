@@ -28,9 +28,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
+# env files — never commit real keys
 .env
 .env*.local
+vercel.env.local
+vercel.env
+!.env.example
+!vercel.env.example
 
 # vercel
 .vercel

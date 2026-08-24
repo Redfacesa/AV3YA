@@ -24,9 +24,8 @@ export function getSupabase(): SupabaseClient | null {
   return client;
 }
 
-/** AV3YA merchant on RedFace Pay */
-export const PANGOLIN_MERCHANT_ID =
-  process.env.NEXT_PUBLIC_AV3YA_MERCHANT_ID || 'dfc3f710-495f-4e95-9695-f1f8e81f773d';
+/** AV3YA merchant on RedFace Pay — set NEXT_PUBLIC_AV3YA_MERCHANT_ID on Vercel */
+export const PANGOLIN_MERCHANT_ID = process.env.NEXT_PUBLIC_AV3YA_MERCHANT_ID || '';
 export const REDFACE_PAY_URL = (process.env.NEXT_PUBLIC_REDFACE_PAY_URL ?? 'https://www.redfacepay.co.za').replace(/\/$/, '');
 export const COMMERCE_API = process.env.NEXT_PUBLIC_REDFACE_COMMERCE_API ?? '';
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000').replace(/\/$/, '');

@@ -14,9 +14,12 @@
 
 ```bash
 npm install
-cp .env.example .env.local
+cp .env.example .env.local   # local dev — gitignored
+cp vercel.env.example vercel.env.local   # fill for Vercel paste — gitignored
 npm run dev
 ```
+
+**Never commit** `.env.local`, `vercel.env.local`, or real API keys. Set secrets only in Vercel → Environment Variables.
 
 Open [http://localhost:3000](http://localhost:3000)
 
