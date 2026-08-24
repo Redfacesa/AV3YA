@@ -16,7 +16,7 @@ export default function SearchPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder='Try "I need office clothes" or "blue jacket"...'
-            className="w-full bg-white/5 border border-white/10 rounded-full pl-12 pr-6 py-4 text-lg focus:border-av3ya-gold outline-none"
+            className="w-full bg-white/5 border border-white/10 rounded-full pl-12 pr-6 py-4 text-lg focus:border-av3ya-neon outline-none"
           />
         </form>
         <p className="text-center text-white/40 text-sm">

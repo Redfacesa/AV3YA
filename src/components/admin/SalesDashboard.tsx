@@ -31,15 +31,15 @@ function StatCard({
   accent?: boolean;
 }) {
   return (
-    <div className={`glass rounded-xl p-3.5 sm:p-5 ${accent ? 'border border-av3ya-gold/30' : ''}`}>
+    <div className={`glass rounded-xl p-3.5 sm:p-5 ${accent ? 'border border-av3ya-neon/30' : ''}`}>
       <div className="flex items-start justify-between gap-2 sm:gap-3">
         <div className="min-w-0">
           <p className="text-white/50 text-xs sm:text-sm">{label}</p>
-          <p className={`text-lg sm:text-2xl font-bold mt-1 truncate ${accent ? 'text-av3ya-gold' : ''}`}>{value}</p>
+          <p className={`text-lg sm:text-2xl font-bold mt-1 truncate ${accent ? 'text-av3ya-neon' : ''}`}>{value}</p>
           {hint && <p className="text-xs text-white/35 mt-1 line-clamp-2">{hint}</p>}
         </div>
-        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-av3ya-gold/10 flex items-center justify-center shrink-0">
-          <Icon size={18} className="text-av3ya-gold" />
+        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-av3ya-neon/10 flex items-center justify-center shrink-0">
+          <Icon size={18} className="text-av3ya-neon" />
         </div>
       </div>
     </div>
@@ -158,7 +158,7 @@ export default function SalesDashboard({
                           {row.customer} · {paymentMethodLabel(row.payment_method)} · {formatSoldAt(row.sold_at)}
                         </p>
                       </div>
-                      <span className="text-av3ya-gold font-semibold shrink-0">{fmtZar(row.amount)}</span>
+                      <span className="text-av3ya-neon font-semibold shrink-0">{fmtZar(row.amount)}</span>
                     </div>
                   </li>
                 ))}
@@ -205,7 +205,7 @@ export default function SalesDashboard({
               href={buildMerchantPortalUrl('products')}
               target="_blank"
               rel="noreferrer"
-              className="inline-block mt-4 text-sm text-av3ya-gold hover:underline"
+              className="inline-block mt-4 text-sm text-av3ya-neon hover:underline"
             >
               Full inventory in RedFace Pay →
             </a>
@@ -220,7 +220,7 @@ export default function SalesDashboard({
             {stats.top_products.slice(0, 3).map((p) => (
               <li key={p.name} className="flex justify-between text-sm">
                 <span className="text-white/70 truncate">{p.name}</span>
-                <span className="text-av3ya-gold shrink-0 ml-2">{p.qty} sold</span>
+                <span className="text-av3ya-neon shrink-0 ml-2">{p.qty} sold</span>
               </li>
             ))}
           </ul>

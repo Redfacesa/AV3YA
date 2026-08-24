@@ -29,7 +29,7 @@ const FALLBACK: Av3yaPlatformConfig = {
     '127.0.0.1',
   ],
   payMerchantId: process.env.NEXT_PUBLIC_AV3YA_MERCHANT_ID ?? '',
-  adminEmails: ['redfacesa@gmail.com', 'info@redfacepay.co.za'],
+  adminEmails: ['av3ya.inc@gmail.com', 'redfacesa@gmail.com', 'info@redfacepay.co.za'],
 };
 
 let cached: Av3yaPlatformConfig | null = null;

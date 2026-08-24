@@ -32,7 +32,7 @@ export default function AssistantPage() {
     <div className="pt-24 pb-16">
       <div className="section-padding max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <Sparkles className="text-av3ya-gold mx-auto mb-3" size={32} />
+          <Sparkles className="text-av3ya-neon mx-auto mb-3" size={32} />
           <h1 className="font-display text-3xl">AI Fashion Assistant</h1>
         </div>
 
@@ -42,7 +42,7 @@ export default function AssistantPage() {
               <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm ${
-                    msg.role === 'user' ? 'bg-av3ya-gold text-av3ya-black' : 'bg-white/10'
+                    msg.role === 'user' ? 'bg-av3ya-neon text-av3ya-black' : 'bg-white/10'
                   }`}
                 >
                   {msg.text}
@@ -58,7 +58,7 @@ export default function AssistantPage() {
                   key={s}
                   type="button"
                   onClick={() => send(s)}
-                  className="text-xs px-3 py-1.5 rounded-full glass hover:border-av3ya-gold/30 transition-colors"
+                  className="text-xs px-3 py-1.5 rounded-full glass hover:border-av3ya-neon/30 transition-colors"
                 >
                   {s}
                 </button>
@@ -72,7 +72,7 @@ export default function AssistantPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me anything about fashion..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-3 focus:border-av3ya-gold outline-none text-sm"
+                className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-3 focus:border-av3ya-neon outline-none text-sm"
               />
               <button type="submit" className="btn-primary !px-4 !py-3">
                 <Send size={18} />

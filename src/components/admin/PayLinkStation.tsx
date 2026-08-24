@@ -87,7 +87,7 @@ export default function PayLinkStation({
     <div className="glass rounded-2xl p-4 sm:p-6 space-y-5">
       <div>
         <h2 className="text-xl font-semibold flex items-center gap-2">
-          <Wifi size={20} className="text-av3ya-gold" />
+          <Wifi size={20} className="text-av3ya-neon" />
           Counter QR / NFC (always waiting)
         </h2>
         <p className="text-sm text-white/50 mt-1">
@@ -102,7 +102,7 @@ export default function PayLinkStation({
             No NFC / counter stations found for this merchant yet.
           </p>
           <p className="text-xs text-white/40">
-            In RedFace Pay → Get Paid, create an NFC card / station. It gets a code like <span className="font-mono text-av3ya-gold">RFP-XXXXXXXX</span>.
+            In RedFace Pay → Get Paid, create an NFC card / station. It gets a code like <span className="font-mono text-av3ya-neon">RFP-XXXXXXXX</span>.
           </p>
           <a
             href={buildMerchantPortalUrl('home')}
@@ -129,7 +129,7 @@ export default function PayLinkStation({
                     onClick={() => onSelectStation?.(s)}
                     className={`rounded-full px-3 py-2 text-sm border transition ${
                       isSelected
-                        ? 'bg-av3ya-gold text-av3ya-black border-av3ya-gold font-semibold'
+                        ? 'bg-av3ya-neon text-av3ya-black border-av3ya-neon font-semibold'
                         : 'border-white/15 text-white/65 hover:border-white/30'
                     }`}
                   >
@@ -143,8 +143,8 @@ export default function PayLinkStation({
 
           {selected && (
             <div className="grid lg:grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-av3ya-gold/30 bg-av3ya-gold/5 p-4 space-y-3 text-center">
-                <p className="text-xs uppercase tracking-wide text-av3ya-gold/80">Print this QR on the counter</p>
+              <div className="rounded-2xl border border-av3ya-neon/30 bg-av3ya-neon/5 p-4 space-y-3 text-center">
+                <p className="text-xs uppercase tracking-wide text-av3ya-neon/80">Print this QR on the counter</p>
                 <div className="mx-auto w-fit rounded-xl bg-white p-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={qrSrc} alt="Waiting counter QR" width={260} height={260} className="block" key={waitingUrl} />
@@ -155,7 +155,7 @@ export default function PayLinkStation({
               <div className="rounded-2xl border border-white/10 bg-black/25 p-4 space-y-3">
                 <div className="space-y-1">
                   <p className="text-xs uppercase tracking-wide text-white/40">NFC / station code</p>
-                  <p className="font-mono text-lg text-av3ya-gold">{selected.tapCode}</p>
+                  <p className="font-mono text-lg text-av3ya-neon">{selected.tapCode}</p>
                   <p className="text-sm text-white/50">{selected.label}</p>
                 </div>
                 <div className="space-y-1">

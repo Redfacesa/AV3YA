@@ -62,9 +62,9 @@ export default function AIFeatures() {
 
   return (
     <>
-      <section className="section-padding py-24 bg-gradient-to-b from-transparent via-pangolin-gold/5 to-transparent">
+      <section className="section-padding py-24 bg-gradient-to-b from-transparent via-av3ya-neon/5 to-transparent">
         <div className="text-center mb-16">
-          <span className="text-av3ya-gold text-sm font-medium tracking-wider uppercase mb-4 block">
+          <span className="text-av3ya-neon text-sm font-medium tracking-wider uppercase mb-4 block">
             Powered by AI
           </span>
           <h2 className="font-display text-4xl lg:text-5xl mb-4">The Future of Fashion</h2>
@@ -85,13 +85,13 @@ export default function AIFeatures() {
               <button
                 type="button"
                 onClick={() => setActive(feature)}
-                className="w-full text-left glass rounded-2xl p-6 h-full hover:border-av3ya-gold/40 border border-transparent transition-all group"
+                className="w-full text-left glass rounded-2xl p-6 h-full hover:border-av3ya-neon/40 border border-transparent transition-all group"
               >
-                <div className="w-12 h-12 rounded-xl bg-av3ya-gold/10 flex items-center justify-center mb-4 group-hover:bg-av3ya-gold/20 transition-colors">
-                  <feature.icon size={24} className="text-av3ya-gold" />
+                <div className="w-12 h-12 rounded-xl bg-av3ya-neon/10 flex items-center justify-center mb-4 group-hover:bg-av3ya-neon/20 transition-colors">
+                  <feature.icon size={24} className="text-av3ya-neon" />
                 </div>
                 <span className="text-xs text-white/30 uppercase tracking-wider">{feature.phase}</span>
-                <h3 className="font-semibold text-lg mt-1 mb-2 group-hover:text-av3ya-gold transition-colors">
+                <h3 className="font-semibold text-lg mt-1 mb-2 group-hover:text-av3ya-neon transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-white/40 text-sm leading-relaxed">{feature.description}</p>
@@ -126,8 +126,8 @@ export default function AIFeatures() {
               <X size={20} />
             </button>
 
-            <div className="w-12 h-12 rounded-xl bg-av3ya-gold/10 flex items-center justify-center mb-4">
-              <active.icon size={24} className="text-av3ya-gold" />
+            <div className="w-12 h-12 rounded-xl bg-av3ya-neon/10 flex items-center justify-center mb-4">
+              <active.icon size={24} className="text-av3ya-neon" />
             </div>
             <span className="text-xs text-white/30 uppercase tracking-wider">{active.phase}</span>
             <h3 id="feature-dialog-title" className="font-display text-2xl mt-1 mb-3">{active.title}</h3>

@@ -109,7 +109,7 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
       <div className="section-padding">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-6 sm:mb-8">
           <div className="min-w-0 pr-16 sm:pr-0">
-            <h1 className="font-display text-2xl sm:text-3xl">Pangolin Admin</h1>
+            <h1 className="font-display text-2xl sm:text-3xl">AV3YA Admin</h1>
             <p className="text-white/50 text-xs sm:text-sm truncate">
               {config.merchant?.email ?? 'redfacesa@gmail.com'} · {config.siteUrl}
             </p>
@@ -142,7 +142,7 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
                   onClick={() => setTab(item.id)}
                   className={`inline-flex items-center gap-2 rounded-full px-3.5 py-2.5 text-sm whitespace-nowrap touch-manipulation transition-colors ${
                     tab === item.id
-                      ? 'bg-av3ya-gold text-av3ya-black font-semibold'
+                      ? 'bg-av3ya-neon text-av3ya-black font-semibold'
                       : 'bg-white/5 text-white/65 border border-white/10'
                   }`}
                 >
@@ -161,7 +161,7 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
                 type="button"
                 onClick={() => setTab(item.id)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all ${
-                  tab === item.id ? 'bg-av3ya-gold/10 text-av3ya-gold' : 'text-white/60 hover:text-white hover:bg-white/5'
+                  tab === item.id ? 'bg-av3ya-neon/10 text-av3ya-neon' : 'text-white/60 hover:text-white hover:bg-white/5'
                 }`}
               >
                 <item.icon size={18} />
@@ -201,7 +201,7 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
                       ].map(([label, value]) => (
                         <div key={label} className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4">
                           <dt className="text-white/50 shrink-0">{label}</dt>
-                          <dd className={`break-all sm:text-right ${label.includes('Paystack') || label.includes('Merchant') ? 'font-mono text-xs text-av3ya-gold' : ''} ${label === 'Status' ? 'capitalize' : ''}`}>
+                          <dd className={`break-all sm:text-right ${label.includes('Paystack') || label.includes('Merchant') ? 'font-mono text-xs text-av3ya-neon' : ''} ${label === 'Status' ? 'capitalize' : ''}`}>
                             {value}
                           </dd>
                         </div>
@@ -209,8 +209,7 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
                     </dl>
                   ) : (
                     <p className="text-white/40 text-sm">
-                      Run migration <code className="text-av3ya-gold">0203_pangolin_merchant_link</code> in RedFace Pay to link{' '}
-                      <strong>redfacesa@gmail.com</strong> as the Pangolin merchant.
+                      Merchant linked: <strong>av3ya.inc@gmail.com</strong> · Paystack subaccount active.
                     </p>
                   )}
                 </div>
@@ -218,13 +217,13 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
                 <div className="glass rounded-xl p-4 sm:p-6">
                   <h3 className="font-semibold mb-3">Shared catalog</h3>
                   <p className="text-sm text-white/50">
-                    Products added here or in RedFace Pay use the same inventory. Pangolin storefront and Pay POS stay in sync.
+                    Products added here or in RedFace Pay use the same inventory. AV3YA storefront and Pay POS stay in sync.
                   </p>
                   <a
                     href={buildMerchantPortalUrl('products')}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex mt-3 text-sm text-av3ya-gold hover:underline"
+                    className="inline-flex mt-3 text-sm text-av3ya-neon hover:underline"
                   >
                     Open RedFace Pay merchant portal →
                   </a>
@@ -276,7 +275,7 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
                         <p className="font-medium">{s.name}</p>
                         <p className="text-sm text-white/40">{s.estimated_days} days · {s.category}</p>
                       </div>
-                      <span className="text-av3ya-gold font-semibold">{fmtZar(s.price)}</span>
+                      <span className="text-av3ya-neon font-semibold">{fmtZar(s.price)}</span>
                     </div>
                   ))}
                 </div>
@@ -295,7 +294,7 @@ export default function AdminClient({ config }: { config: Av3yaPlatformConfig })
                 <div className="glass rounded-xl p-4 sm:p-6 space-y-4">
                   <h2 className="text-xl font-semibold">Platform Settings</h2>
                   <div className="space-y-2 text-xs sm:text-sm font-mono bg-black/30 rounded-lg p-4 overflow-x-auto">
-                    <p><span className="text-white/40">ECOSYSTEM_APP:</span> pangolin</p>
+                    <p><span className="text-white/40">ECOSYSTEM_APP:</span> av3ya</p>
                     <p><span className="text-white/40">MERCHANT_ID:</span> {merchantId || 'from DB after migration'}</p>
                     <p><span className="text-white/40">SITE_URL:</span> {config.siteUrl}</p>
                     <p><span className="text-white/40">ADMIN:</span> {config.adminEmails.join(', ')}</p>

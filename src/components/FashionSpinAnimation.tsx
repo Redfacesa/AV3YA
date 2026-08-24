@@ -50,7 +50,7 @@ export default function FashionSpinAnimation({
       aria-label="Pangolin outfit 360 degree view animation"
     >
       {showGlow && (
-        <div className="absolute inset-[8%] rounded-full bg-av3ya-gold/15 blur-3xl animate-pulse pointer-events-none" />
+        <div className="absolute inset-[8%] rounded-full bg-av3ya-neon/15 blur-3xl animate-pulse pointer-events-none" />
       )}
 
       <div className="relative aspect-[3/4] w-full max-w-md mx-auto">
@@ -73,7 +73,7 @@ export default function FashionSpinAnimation({
             aria-label={`Show angle ${i + 1}`}
             onClick={() => setFrame(i)}
             className={`h-1.5 rounded-full transition-all ${
-              i === frame ? 'w-6 bg-av3ya-gold' : 'w-1.5 bg-white/25 hover:bg-white/50'
+              i === frame ? 'w-6 bg-av3ya-neon' : 'w-1.5 bg-white/25 hover:bg-white/50'
             }`}
           />
         ))}

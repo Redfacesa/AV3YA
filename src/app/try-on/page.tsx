@@ -104,7 +104,7 @@ export default function TryOnPage() {
     <div className="pt-24 pb-16">
       <div className="section-padding max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-av3ya-gold text-sm uppercase tracking-wider">AI Virtual Try-On</span>
+          <span className="text-av3ya-neon text-sm uppercase tracking-wider">AI Virtual Try-On</span>
           <h1 className="font-display text-4xl lg:text-5xl mt-2 mb-4">Try Before You Buy</h1>
           <p className="text-white/50 max-w-xl mx-auto">
             Upload your photo, pick an item from our catalog, and OpenRouter image models generate a realistic try-on preview.
@@ -115,7 +115,7 @@ export default function TryOnPage() {
           <div className="mb-8 glass rounded-xl p-4 flex gap-3 text-sm text-amber-200/90 border border-amber-500/20">
             <AlertCircle size={18} className="shrink-0 mt-0.5" />
             <p>
-              Add <code className="text-av3ya-gold">OPENROUTER_API_KEY</code> in Vercel to enable live try-on.
+              Add <code className="text-av3ya-neon">OPENROUTER_API_KEY</code> in Vercel to enable live try-on.
               You can still browse items below.
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function TryOnPage() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="glass rounded-2xl p-8">
             <h2 className="font-semibold mb-4">1. Upload your photo</h2>
-            <label className="block border-2 border-dashed border-white/20 rounded-xl p-8 text-center cursor-pointer hover:border-av3ya-gold/50 transition-colors">
+            <label className="block border-2 border-dashed border-white/20 rounded-xl p-8 text-center cursor-pointer hover:border-av3ya-neon/50 transition-colors">
               <input type="file" accept="image/*" onChange={handleUpload} className="hidden" />
               {photo ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -150,7 +150,7 @@ export default function TryOnPage() {
                     type="button"
                     onClick={() => { setSelected(p); setResult(null); setError(null); }}
                     className={`rounded-xl border p-2 text-left transition-colors ${
-                      active ? 'border-av3ya-gold bg-av3ya-gold/10' : 'border-white/10 hover:border-white/30'
+                      active ? 'border-av3ya-neon bg-av3ya-neon/10' : 'border-white/10 hover:border-white/30'
                     }`}
                   >
                     <div className="relative aspect-square rounded-lg overflow-hidden bg-white/5 mb-2">
@@ -161,7 +161,7 @@ export default function TryOnPage() {
                       )}
                     </div>
                     <p className="text-xs font-medium line-clamp-2">{p.name}</p>
-                    <p className="text-xs text-av3ya-gold mt-0.5">{fmtZar(p.price)}</p>
+                    <p className="text-xs text-av3ya-neon mt-0.5">{fmtZar(p.price)}</p>
                   </button>
                 );
               })}
@@ -204,7 +204,7 @@ export default function TryOnPage() {
 
         {generating && (
           <div className="mt-12 glass rounded-2xl p-16 text-center">
-            <div className="w-12 h-12 border-2 border-av3ya-gold border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+            <div className="w-12 h-12 border-2 border-av3ya-neon border-t-transparent rounded-full animate-spin mx-auto mb-4" />
             <p className="text-white/50">OpenRouter is creating your virtual try-on…</p>
             <p className="text-xs text-white/30 mt-2">Image-to-image · usually 15–60 seconds</p>
           </div>

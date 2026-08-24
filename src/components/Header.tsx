@@ -17,7 +17,7 @@ import { useCart } from '@/lib/store';
 
 const NAV = [
   { href: '/shop', label: 'Shop' },
-  { href: '/tailoring', label: 'Tailoring' },
+  { href: '/#story', label: 'Story' },
   { href: '/try-on', label: 'Try On' },
   { href: '/inspiration', label: 'Inspiration' },
 ];
@@ -54,7 +54,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm tracking-wide text-white/70 hover:text-av3ya-gold transition-colors"
+                className="text-sm tracking-wide text-white/70 hover:text-av3ya-neon transition-colors"
               >
                 {item.label}
               </Link>
@@ -74,7 +74,7 @@ export default function Header() {
             <Link href="/cart" className="relative p-2 text-white/70 hover:text-white transition-colors" aria-label="Cart">
               <ShoppingBag size={20} />
               {itemCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-av3ya-gold text-av3ya-black text-xs font-bold rounded-full flex items-center justify-center">
+                <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-av3ya-neon text-av3ya-black text-xs font-bold rounded-full flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
@@ -116,15 +116,15 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={closeMenu}
-                    className="py-3 text-lg text-white/80 hover:text-av3ya-gold transition-colors"
+                    className="py-3 text-lg text-white/80 hover:text-av3ya-neon transition-colors"
                   >
                     {item.label}
                   </Link>
                 ))}
-                <Link href="/dashboard" onClick={closeMenu} className="py-3 text-lg text-white/80 hover:text-av3ya-gold flex items-center gap-2">
+                <Link href="/dashboard" onClick={closeMenu} className="py-3 text-lg text-white/80 hover:text-av3ya-neon flex items-center gap-2">
                   <User size={18} /> My Account
                 </Link>
-                <Link href="/admin" onClick={closeMenu} className="py-3 text-lg text-white/80 hover:text-av3ya-gold flex items-center gap-2">
+                <Link href="/admin" onClick={closeMenu} className="py-3 text-lg text-white/80 hover:text-av3ya-neon flex items-center gap-2">
                   <Scissors size={18} /> Admin
                 </Link>
               </nav>

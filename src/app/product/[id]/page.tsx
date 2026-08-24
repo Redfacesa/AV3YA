@@ -71,7 +71,7 @@ export default function ProductPage() {
                     type="button"
                     onClick={() => setActiveImage(idx)}
                     className={`relative aspect-square rounded-xl overflow-hidden bg-white/5 border-2 transition-colors ${
-                      activeImage === idx ? 'border-av3ya-gold' : 'border-transparent'
+                      activeImage === idx ? 'border-av3ya-neon' : 'border-transparent'
                     }`}
                   >
                     <Image src={img} alt="" fill className="object-cover" />
@@ -87,13 +87,13 @@ export default function ProductPage() {
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} className={i < Math.round(product.rating!) ? 'text-av3ya-gold fill-pangolin-gold' : 'text-white/20'} />
+                    <Star key={i} size={14} className={i < Math.round(product.rating!) ? 'text-av3ya-neon fill-av3ya-neon' : 'text-white/20'} />
                   ))}
                 </div>
                 <span className="text-sm text-white/40">({product.review_count ?? 0} reviews)</span>
               </div>
             )}
-            <p className="text-3xl text-av3ya-gold font-semibold mb-6">{fmtZar(product.price)}</p>
+            <p className="text-3xl text-av3ya-neon font-semibold mb-6">{fmtZar(product.price)}</p>
             {product.description && <p className="text-white/60 leading-relaxed mb-8">{product.description}</p>}
 
             {product.colors && product.colors.length > 0 && (
@@ -105,7 +105,7 @@ export default function ProductPage() {
                       key={c.name}
                       type="button"
                       onClick={() => setColor(c.name)}
-                      className={`w-8 h-8 rounded-full border-2 transition-all ${color === c.name ? 'border-av3ya-gold scale-110' : 'border-white/20'}`}
+                      className={`w-8 h-8 rounded-full border-2 transition-all ${color === c.name ? 'border-av3ya-neon scale-110' : 'border-white/20'}`}
                       style={{ backgroundColor: c.hex }}
                       title={c.name}
                     />
@@ -126,7 +126,7 @@ export default function ProductPage() {
                       onClick={() => setSize(s.label)}
                       className={`px-4 py-2 rounded-lg text-sm border transition-all ${
                         size === s.label
-                          ? 'border-av3ya-gold bg-av3ya-gold/10 text-av3ya-gold'
+                          ? 'border-av3ya-neon bg-av3ya-neon/10 text-av3ya-neon'
                           : s.inStock
                             ? 'border-white/20 hover:border-white/40'
                             : 'border-white/10 text-white/30 line-through cursor-not-allowed'
@@ -182,7 +182,7 @@ export default function ProductPage() {
             )}
             {product.delivery_info && (
               <div className="flex items-start gap-3 text-sm text-white/50">
-                <Truck size={18} className="text-av3ya-gold shrink-0 mt-0.5" />
+                <Truck size={18} className="text-av3ya-neon shrink-0 mt-0.5" />
                 <p>{product.delivery_info}</p>
               </div>
             )}

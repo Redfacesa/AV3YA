@@ -11,7 +11,7 @@ export default function MeasurementsPage() {
     <div className="pt-24 pb-16">
       <div className="section-padding max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-av3ya-gold text-sm uppercase tracking-wider">Phase 3 · AI Measurements</span>
+          <span className="text-av3ya-neon text-sm uppercase tracking-wider">Phase 3 · AI Measurements</span>
           <h1 className="font-display text-4xl mt-2 mb-4">AI Body Measurements</h1>
           <p className="text-white/50">
             Upload three photos and our AI estimates your measurements with a confidence score.
@@ -23,7 +23,7 @@ export default function MeasurementsPage() {
             <label
               key={label}
               className={`glass rounded-xl p-8 text-center cursor-pointer border-2 transition-colors ${
-                step === i ? 'border-av3ya-gold' : 'border-transparent hover:border-white/20'
+                step === i ? 'border-av3ya-neon' : 'border-transparent hover:border-white/20'
               }`}
               onClick={() => setStep(i)}
             >
@@ -42,7 +42,7 @@ export default function MeasurementsPage() {
 
         <div className="glass rounded-2xl p-8">
           <h2 className="font-semibold mb-6 flex items-center gap-2">
-            <Ruler size={20} className="text-av3ya-gold" />
+            <Ruler size={20} className="text-av3ya-neon" />
             Estimated Measurements
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

@@ -124,13 +124,13 @@ export default function TailoringPos() {
   if (done) {
     return (
       <div className="glass rounded-2xl p-8 max-w-lg mx-auto text-center">
-        <div className="w-16 h-16 rounded-full bg-av3ya-gold/20 flex items-center justify-center mx-auto mb-6">
-          <Scissors size={32} className="text-av3ya-gold" />
+        <div className="w-16 h-16 rounded-full bg-av3ya-neon/20 flex items-center justify-center mx-auto mb-6">
+          <Scissors size={32} className="text-av3ya-neon" />
         </div>
         <h2 className="font-display text-2xl mb-2">Order saved</h2>
         <p className="text-white/50 mb-2">Reference: <strong className="text-white">{done.reference}</strong></p>
         {done.mode === 'cash' ? (
-          <p className="text-av3ya-gold font-semibold text-lg mb-6">
+          <p className="text-av3ya-neon font-semibold text-lg mb-6">
             Pay {fmtZar(done.amount)} cash at the counter
           </p>
         ) : (
@@ -153,14 +153,14 @@ export default function TailoringPos() {
               key={service.id}
               type="button"
               onClick={() => cart.addService(service)}
-              className="text-left glass rounded-xl p-4 border border-transparent hover:border-av3ya-gold/40 active:scale-[0.99] transition touch-manipulation min-h-[5rem]"
+              className="text-left glass rounded-xl p-4 border border-transparent hover:border-av3ya-neon/40 active:scale-[0.99] transition touch-manipulation min-h-[5rem]"
             >
               <h3 className="font-medium mb-1">{service.name}</h3>
               {service.description && (
                 <p className="text-xs text-white/40 line-clamp-2 mb-2">{service.description}</p>
               )}
               <div className="flex justify-between text-sm">
-                <span className="text-av3ya-gold font-semibold">{fmtZar(service.price)}</span>
+                <span className="text-av3ya-neon font-semibold">{fmtZar(service.price)}</span>
                 <span className="text-white/40">{service.estimated_days}d</span>
               </div>
             </button>
@@ -183,7 +183,7 @@ export default function TailoringPos() {
                 <li key={line.service.id} className="flex items-center gap-2 text-sm bg-black/20 rounded-lg p-2">
                   <div className="flex-1 min-w-0">
                     <p className="truncate font-medium">{line.service.name}</p>
-                    <p className="text-av3ya-gold">{fmtZar(line.service.price * line.quantity)}</p>
+                    <p className="text-av3ya-neon">{fmtZar(line.service.price * line.quantity)}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <button

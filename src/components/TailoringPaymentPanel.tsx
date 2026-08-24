@@ -86,9 +86,9 @@ export default function TailoringPaymentPanel({
 
   return (
     <div className="space-y-4">
-      <div className="rounded-xl border border-av3ya-gold/30 bg-av3ya-gold/5 p-4 flex justify-between items-center">
+      <div className="rounded-xl border border-av3ya-neon/30 bg-av3ya-neon/5 p-4 flex justify-between items-center">
         <span className="text-white/70">Total due</span>
-        <span className="text-2xl font-bold text-av3ya-gold">{fmtZar(amount)}</span>
+        <span className="text-2xl font-bold text-av3ya-neon">{fmtZar(amount)}</span>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-3">

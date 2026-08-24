@@ -83,7 +83,7 @@ export default function CartPage() {
                       {[item.size, item.color].filter(Boolean).join(' · ')}
                     </p>
                   )}
-                  <p className="text-av3ya-gold mt-1">{fmtZar(item.product.price)}</p>
+                  <p className="text-av3ya-neon mt-1">{fmtZar(item.product.price)}</p>
                 </div>
                 <div className="flex flex-col items-end justify-between">
                   <button
@@ -119,7 +119,7 @@ export default function CartPage() {
         <div className="glass rounded-2xl p-6 space-y-4">
           <div className="flex justify-between text-lg">
             <span>Subtotal</span>
-            <span className="font-semibold text-av3ya-gold">{fmtZar(cartTotal)}</span>
+            <span className="font-semibold text-av3ya-neon">{fmtZar(cartTotal)}</span>
           </div>
           <button
             type="button"

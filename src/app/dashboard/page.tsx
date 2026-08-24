@@ -45,19 +45,19 @@ export default function DashboardPage() {
             <Link
               key={section.href}
               href={section.href}
-              className="glass rounded-2xl p-6 hover:border-av3ya-gold/30 transition-all group"
+              className="glass rounded-2xl p-6 hover:border-av3ya-neon/30 transition-all group"
             >
-              <section.icon size={28} className="text-av3ya-gold mb-4 group-hover:scale-110 transition-transform" />
+              <section.icon size={28} className="text-av3ya-neon mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-medium text-lg">{section.label}</h3>
             </Link>
           ))}
         </div>
 
         <div className="mt-12 glass rounded-2xl p-8 text-center">
-          <Gift size={40} className="text-av3ya-gold mx-auto mb-4" />
+          <Gift size={40} className="text-av3ya-neon mx-auto mb-4" />
           <h2 className="font-display text-2xl mb-2">RedFace Points</h2>
           <p className="text-white/50 mb-4">Earn points on every purchase. Redeem for discounts and free tailoring.</p>
-          <p className="text-4xl font-bold text-av3ya-gold">0 pts</p>
+          <p className="text-4xl font-bold text-av3ya-neon">0 pts</p>
           <p className="text-xs text-white/30 mt-2">Sign in to view your balance</p>
         </div>
       </div>

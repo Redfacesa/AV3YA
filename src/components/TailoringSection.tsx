@@ -17,7 +17,7 @@ export default function TailoringSection({ services = [] }: Props) {
     <section className="section-padding py-24 border-t border-white/10">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <span className="text-av3ya-gold text-sm font-medium tracking-wider uppercase mb-4 block">
+          <span className="text-av3ya-neon text-sm font-medium tracking-wider uppercase mb-4 block">
             Expert Craftsmanship
           </span>
           <h2 className="font-display text-4xl lg:text-5xl mb-6">
@@ -42,12 +42,12 @@ export default function TailoringSection({ services = [] }: Props) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass rounded-2xl p-5 hover:border-av3ya-gold/30 transition-colors"
+              className="glass rounded-2xl p-5 hover:border-av3ya-neon/30 transition-colors"
             >
               <h3 className="font-medium mb-2">{service.name}</h3>
               <p className="text-white/40 text-sm mb-4 line-clamp-2">{service.description}</p>
               <div className="flex items-center justify-between">
-                <span className="text-av3ya-gold font-semibold">{fmtZar(service.price)}</span>
+                <span className="text-av3ya-neon font-semibold">{fmtZar(service.price)}</span>
                 <span className="flex items-center gap-1 text-xs text-white/40">
                   <Clock size={12} />
                   {service.estimated_days}d

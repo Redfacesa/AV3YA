@@ -15,8 +15,9 @@ export const metadata: Metadata = {
   keywords: ['AV3YA', 'anime fashion', 'streetwear', 'South Africa', 'RedFace Pay'],
   openGraph: {
     title: 'AV3YA',
-    description: 'Wear the voltage. Shop anime streetwear and pay with RedFace Pay.',
+    description: 'Don\'t just wear the culture. Experience it.',
     type: 'website',
+    images: [{ url: '/brand/hero-main.png' }],
   },
   other: {
     'instagram:site': AV3YA_SOCIAL.instagram,

@@ -52,7 +52,7 @@ export default function Av3yaIntroAnimation({ onDone }: { onDone?: () => void })
         />
       </div>
 
-      <p className="mt-6 text-xs tracking-[0.3em] uppercase text-av3ya-gold/70">Loading collection</p>
+      <p className="mt-6 text-xs tracking-[0.3em] uppercase text-av3ya-neon/70">Loading collection</p>
     </motion.div>
   );
 }

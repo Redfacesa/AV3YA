@@ -92,7 +92,7 @@ export default function AdminGate({
     return (
       <div className="pt-32 pb-16 section-padding max-w-lg mx-auto">
         <div className="text-center mb-8">
-          <Shield size={48} className="mx-auto mb-6 text-av3ya-gold" />
+          <Shield size={48} className="mx-auto mb-6 text-av3ya-neon" />
           <h1 className="font-display text-3xl mb-4">AV3YA Admin</h1>
           <p className="text-white/50 text-sm">
             Sign in with your RedFace Pay password. Only approved admin emails can access this panel.
@@ -110,7 +110,7 @@ export default function AdminGate({
               autoComplete="username"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none focus:border-av3ya-gold/50"
+              className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none focus:border-av3ya-neon/50"
               required
             />
           </div>
@@ -126,7 +126,7 @@ export default function AdminGate({
                 autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 pr-12 text-sm text-white outline-none focus:border-av3ya-gold/50"
+                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 pr-12 text-sm text-white outline-none focus:border-av3ya-neon/50"
                 required
               />
               <button
@@ -149,7 +149,7 @@ export default function AdminGate({
         </form>
 
         <div className="mt-6 text-center">
-          <a href={buildSsoLoginUrl('/admin')} className="text-sm text-av3ya-gold hover:underline">
+          <a href={buildSsoLoginUrl('/admin')} className="text-sm text-av3ya-neon hover:underline">
             Or continue via RedFace Pay SSO
           </a>
         </div>

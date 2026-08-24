@@ -1,7 +1,7 @@
 export const AV3YA_SOCIAL = {
   instagram: '',
   facebook: '',
-  email: 'mailto:info@redfacepay.co.za',
+  email: 'mailto:av3ya.inc@gmail.com',
 } as const;
 
 export const AV3YA_SOCIAL_LINKS = [

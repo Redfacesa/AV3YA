@@ -47,7 +47,7 @@ export default function ShopClient() {
           <a
             href="/shop"
             className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
-              !categorySlug ? 'bg-av3ya-gold text-av3ya-black font-medium' : 'glass text-white/60 hover:text-white'
+              !categorySlug ? 'bg-av3ya-neon text-av3ya-black font-medium' : 'glass text-white/60 hover:text-white'
             }`}
           >
             All
@@ -57,7 +57,7 @@ export default function ShopClient() {
               key={cat.id}
               href={`/shop?category=${cat.slug}`}
               className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
-                categorySlug === cat.slug ? 'bg-av3ya-gold text-av3ya-black font-medium' : 'glass text-white/60 hover:text-white'
+                categorySlug === cat.slug ? 'bg-av3ya-neon text-av3ya-black font-medium' : 'glass text-white/60 hover:text-white'
               }`}
             >
               {cat.emoji} {cat.name}

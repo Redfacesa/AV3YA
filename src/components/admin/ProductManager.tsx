@@ -406,14 +406,14 @@ export default function ProductManager({ merchantId, categories }: Props) {
               className="w-full text-sm text-white/60"
             />
             {newImages.length > 0 && (
-              <p className="text-xs text-av3ya-gold mt-1">{newImages.length} new photo(s) ready to upload</p>
+              <p className="text-xs text-av3ya-neon mt-1">{newImages.length} new photo(s) ready to upload</p>
             )}
           </div>
 
           <div>
             <div className="flex items-center justify-between mb-2">
               <label className="text-xs text-white/40 uppercase tracking-wide">Size variants</label>
-              <button type="button" onClick={addVariantRow} className="text-xs text-av3ya-gold hover:text-white">
+              <button type="button" onClick={addVariantRow} className="text-xs text-av3ya-neon hover:text-white">
                 + Add size
               </button>
             </div>

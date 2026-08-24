@@ -402,7 +402,7 @@ export default function RetailPosPanel({
       {station?.tapCode && (
         <p className="text-xs text-white/45">
           Sends to waiting link{' '}
-          <span className="font-mono text-av3ya-gold">{waitingLink}</span>
+          <span className="font-mono text-av3ya-neon">{waitingLink}</span>
         </p>
       )}
       {armedSessionId && armedAmount != null && station && (
@@ -414,7 +414,7 @@ export default function RetailPosPanel({
             Customer already on “waiting for amount” (or scanning now) will get this price on:
           </p>
           <p className="text-[11px] font-mono text-white/40 break-all">{waitingLink}</p>
-          <p className="text-xs text-white/45">Station code: <span className="font-mono text-av3ya-gold">{station.tapCode}</span></p>
+          <p className="text-xs text-white/45">Station code: <span className="font-mono text-av3ya-neon">{station.tapCode}</span></p>
           <button
             type="button"
             disabled={arming}
@@ -446,8 +446,8 @@ export default function RetailPosPanel({
         </button>
       </div>
       {showChargeQr && pricedPayUrl && (
-        <div className="rounded-xl border border-av3ya-gold/30 bg-av3ya-gold/5 p-4 text-center space-y-2">
-          <p className="text-sm text-av3ya-gold font-semibold">
+        <div className="rounded-xl border border-av3ya-neon/30 bg-av3ya-neon/5 p-4 text-center space-y-2">
+          <p className="text-sm text-av3ya-neon font-semibold">
             On-screen QR — {fmtZar(amountDue)} in the link
           </p>
           <div className="inline-block rounded-xl bg-white p-3">
@@ -470,7 +470,7 @@ export default function RetailPosPanel({
           <li key={key} className="flex items-center gap-2 rounded-xl bg-black/25 px-3 py-3">
             <div className="flex-1 min-w-0">
               <p className="text-sm truncate">{lineLabel(line)}</p>
-              <p className="text-xs text-av3ya-gold">{fmtZar(linePrice(line) * line.qty)}</p>
+              <p className="text-xs text-av3ya-neon">{fmtZar(linePrice(line) * line.qty)}</p>
             </div>
             <div className="flex items-center gap-1 shrink-0">
               <button
@@ -516,7 +516,7 @@ export default function RetailPosPanel({
           type="button"
           onClick={() => switchMode('products')}
           className={`flex-1 inline-flex items-center justify-center gap-2 rounded-full px-3 py-2.5 text-sm transition-colors touch-manipulation ${
-            mode === 'products' ? 'bg-av3ya-gold text-av3ya-black font-semibold' : 'text-white/60'
+            mode === 'products' ? 'bg-av3ya-neon text-av3ya-black font-semibold' : 'text-white/60'
           }`}
         >
           <ShoppingCart size={14} />
@@ -526,7 +526,7 @@ export default function RetailPosPanel({
           type="button"
           onClick={() => switchMode('custom')}
           className={`flex-1 inline-flex items-center justify-center gap-2 rounded-full px-3 py-2.5 text-sm transition-colors touch-manipulation ${
-            mode === 'custom' ? 'bg-av3ya-gold text-av3ya-black font-semibold' : 'text-white/60'
+            mode === 'custom' ? 'bg-av3ya-neon text-av3ya-black font-semibold' : 'text-white/60'
           }`}
         >
           <Banknote size={14} />
@@ -545,7 +545,7 @@ export default function RetailPosPanel({
           <div className="lg:col-span-3 glass rounded-2xl p-4 sm:p-6 space-y-4">
             <div className="text-center lg:text-left">
               <p className="text-xs uppercase tracking-wide text-white/40">Amount to charge</p>
-              <p className="mt-2 font-display text-4xl sm:text-5xl text-av3ya-gold tabular-nums break-all">
+              <p className="mt-2 font-display text-4xl sm:text-5xl text-av3ya-neon tabular-nums break-all">
                 {fmtZar(customTotal || 0)}
               </p>
             </div>
@@ -560,7 +560,7 @@ export default function RetailPosPanel({
                     setError(null);
                     setMessage(null);
                   }}
-                  className="shrink-0 rounded-full border border-white/10 px-3.5 py-2 text-sm text-white/70 hover:border-av3ya-gold/50 touch-manipulation"
+                  className="shrink-0 rounded-full border border-white/10 px-3.5 py-2 text-sm text-white/70 hover:border-av3ya-neon/50 touch-manipulation"
                 >
                   R{n}
                 </button>
@@ -573,7 +573,7 @@ export default function RetailPosPanel({
                   key={key}
                   type="button"
                   onClick={() => pressKey(key)}
-                  className="rounded-xl border border-white/10 bg-black/30 min-h-14 text-xl font-semibold hover:border-av3ya-gold/40 active:scale-[0.98] transition touch-manipulation"
+                  className="rounded-xl border border-white/10 bg-black/30 min-h-14 text-xl font-semibold hover:border-av3ya-neon/40 active:scale-[0.98] transition touch-manipulation"
                 >
                   {key}
                 </button>
@@ -581,7 +581,7 @@ export default function RetailPosPanel({
               <button
                 type="button"
                 onClick={() => pressKey('back')}
-                className="rounded-xl border border-white/10 bg-black/30 min-h-14 flex items-center justify-center hover:border-av3ya-gold/40 active:scale-[0.98] transition touch-manipulation"
+                className="rounded-xl border border-white/10 bg-black/30 min-h-14 flex items-center justify-center hover:border-av3ya-neon/40 active:scale-[0.98] transition touch-manipulation"
                 aria-label="Backspace"
               >
                 <Delete size={20} />
@@ -598,12 +598,12 @@ export default function RetailPosPanel({
 
           <div className="lg:col-span-2 glass rounded-2xl p-4 sm:p-5 flex flex-col">
             <div className="flex items-center gap-2 mb-3">
-              <Banknote size={18} className="text-av3ya-gold" />
+              <Banknote size={18} className="text-av3ya-neon" />
               <h3 className="font-semibold">Pay now</h3>
             </div>
             <div className="flex justify-between text-lg font-semibold mb-4">
               <span>Total</span>
-              <span className="text-av3ya-gold">{fmtZar(amountDue)}</span>
+              <span className="text-av3ya-neon">{fmtZar(amountDue)}</span>
             </div>
             {checkoutFields}
           </div>
@@ -624,10 +624,10 @@ export default function RetailPosPanel({
                   key={product.id}
                   type="button"
                   onClick={() => onProductTap(product)}
-                  className="glass rounded-xl p-3 text-left border border-transparent hover:border-av3ya-gold/40 active:scale-[0.98] transition touch-manipulation min-h-[5.5rem]"
+                  className="glass rounded-xl p-3 text-left border border-transparent hover:border-av3ya-neon/40 active:scale-[0.98] transition touch-manipulation min-h-[5.5rem]"
                 >
                   <p className="font-medium text-sm line-clamp-2 leading-snug">{product.name}</p>
-                  <p className="text-av3ya-gold text-sm mt-1.5 font-semibold">{fmtZar(product.price)}</p>
+                  <p className="text-av3ya-neon text-sm mt-1.5 font-semibold">{fmtZar(product.price)}</p>
                   {product.track_inventory && product.stock_quantity != null && (
                     <p className="text-xs text-white/35 mt-1">{product.stock_quantity} left</p>
                   )}
@@ -645,7 +645,7 @@ export default function RetailPosPanel({
           {/* Desktop cart */}
           <div className="hidden lg:flex lg:col-span-2 glass rounded-2xl p-5 flex-col min-h-[420px]">
             <div className="flex items-center gap-2 mb-4">
-              <ShoppingCart size={18} className="text-av3ya-gold" />
+              <ShoppingCart size={18} className="text-av3ya-neon" />
               <h3 className="font-semibold">Current sale</h3>
             </div>
 
@@ -658,7 +658,7 @@ export default function RetailPosPanel({
             <div className="mt-auto pt-4 border-t border-white/10 space-y-3">
               <div className="flex justify-between text-lg font-semibold">
                 <span>Total</span>
-                <span className="text-av3ya-gold">{fmtZar(productSubtotal)}</span>
+                <span className="text-av3ya-neon">{fmtZar(productSubtotal)}</span>
               </div>
               {checkoutFields}
             </div>
@@ -697,7 +697,7 @@ export default function RetailPosPanel({
             <div className="flex items-center justify-between mb-3">
               <div>
                 <h3 className="font-semibold">Checkout</h3>
-                <p className="text-sm text-av3ya-gold">{fmtZar(productSubtotal)}</p>
+                <p className="text-sm text-av3ya-neon">{fmtZar(productSubtotal)}</p>
               </div>
               <button
                 type="button"
@@ -727,7 +727,7 @@ export default function RetailPosPanel({
                   key={v.id}
                   type="button"
                   onClick={() => addToCart(variantPick, v)}
-                  className="rounded-xl border border-white/10 min-h-12 text-sm hover:border-av3ya-gold/50 touch-manipulation"
+                  className="rounded-xl border border-white/10 min-h-12 text-sm hover:border-av3ya-neon/50 touch-manipulation"
                 >
                   {v.label}
                 </button>

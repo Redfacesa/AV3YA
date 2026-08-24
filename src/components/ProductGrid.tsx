@@ -33,7 +33,7 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
           <h2 className="font-display text-4xl lg:text-5xl mb-2">{title}</h2>
           <p className="text-white/50">Curated pieces from our latest collection</p>
         </div>
-        <Link href="/shop" className="text-av3ya-gold hover:text-white transition-colors text-sm hidden sm:block">
+        <Link href="/shop" className="text-av3ya-neon hover:text-white transition-colors text-sm hidden sm:block">
           View All →
         </Link>
       </div>
@@ -76,7 +76,7 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
                 <button
                   type="button"
                   onClick={() => addItem(product)}
-                  className="w-10 h-10 rounded-full glass flex items-center justify-center text-white/70 hover:text-av3ya-gold transition-colors"
+                  className="w-10 h-10 rounded-full glass flex items-center justify-center text-white/70 hover:text-av3ya-neon transition-colors"
                   aria-label="Quick add to cart"
                 >
                   <ShoppingBag size={18} />
@@ -91,16 +91,16 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
             </div>
 
             <Link href={`/product/${product.id}`}>
-              <h3 className="font-medium mb-1 group-hover:text-av3ya-gold transition-colors line-clamp-1">
+              <h3 className="font-medium mb-1 group-hover:text-av3ya-neon transition-colors line-clamp-1">
                 {product.name}
               </h3>
             </Link>
 
             <div className="flex items-center justify-between">
-              <span className="text-av3ya-gold font-semibold">{fmtZar(product.price)}</span>
+              <span className="text-av3ya-neon font-semibold">{fmtZar(product.price)}</span>
               {product.rating != null && (
                 <span className="flex items-center gap-1 text-xs text-white/40">
-                  <Star size={12} className="text-av3ya-gold fill-pangolin-gold" />
+                  <Star size={12} className="text-av3ya-neon fill-av3ya-neon" />
                   {product.rating.toFixed(1)}
                 </span>
               )}

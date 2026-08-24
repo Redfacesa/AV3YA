@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import BrandStory from '@/components/BrandStory';
 import CategoryGrid from '@/components/CategoryGrid';
 import ProductGrid from '@/components/ProductGrid';
 import TailoringSection from '@/components/TailoringSection';
@@ -23,6 +24,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <BrandStory />
       <CategoryGrid categories={categories} />
       <ProductGrid products={featured} />
       <TailoringSection services={services} />

@@ -21,7 +21,7 @@ export default function WardrobePage() {
 
         <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
           {COLLECTIONS.map((c) => (
-            <button key={c} type="button" className="px-4 py-2 rounded-full glass text-sm whitespace-nowrap hover:border-av3ya-gold/30">
+            <button key={c} type="button" className="px-4 py-2 rounded-full glass text-sm whitespace-nowrap hover:border-av3ya-neon/30">
               {c}
             </button>
           ))}

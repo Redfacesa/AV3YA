@@ -153,7 +153,7 @@ export default function CategoryManager({ merchantId, categories, onChange }: Pr
               <button
                 type="button"
                 onClick={() => void onRename(c)}
-                className="flex items-center gap-3 min-w-0 text-left hover:text-av3ya-gold transition-colors"
+                className="flex items-center gap-3 min-w-0 text-left hover:text-av3ya-neon transition-colors"
               >
                 <span className="text-2xl shrink-0">{c.emoji ?? '🏷️'}</span>
                 <div className="min-w-0">

@@ -20,9 +20,9 @@ export default function InspirationPage() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm hover:border-av3ya-gold/40 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm hover:border-av3ya-neon/40 transition-colors"
               >
-                <Icon size={16} className="text-av3ya-gold" />
+                <Icon size={16} className="text-av3ya-neon" />
                 Follow on {link.label}
               </a>
             );
@@ -46,7 +46,7 @@ export default function InspirationPage() {
           href={AV3YA_SOCIAL_LINKS[0].href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-av3ya-gold hover:text-white transition-colors"
+          className="text-av3ya-neon hover:text-white transition-colors"
         >
           @pangolinclothing_sa
         </a>
