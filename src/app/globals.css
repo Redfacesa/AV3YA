@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-display: 'Orbitron', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', system-ui, sans-serif;
   --font-sans: 'Inter', system-ui, sans-serif;
-  --background: #0a0014;
-  --foreground: #f8e8ff;
+  --background: #000000;
+  --foreground: #f5f5f5;
   --av3ya-neon: #ff2d95;
   --av3ya-purple: #b026ff;
 }
@@ -21,44 +21,69 @@ body {
   font-family: var(--font-sans);
 }
 
+@layer components {
+  .nav-link {
+    @apply text-[11px] xl:text-xs font-semibold tracking-[0.22em] uppercase text-white/55 hover:text-white transition-colors;
+  }
+  .nav-link-active {
+    @apply text-av3ya-neon;
+  }
+  .nav-utility {
+    @apply text-white/55 hover:text-av3ya-neon transition-colors;
+  }
+  .nav-grid-item {
+    @apply flex flex-col gap-1 px-4 sm:px-6 py-6 border-r border-white/10 last:border-r-0 border-b sm:border-b-0 hover:bg-white/[0.03] transition-colors;
+  }
+  .btn-enter {
+    @apply inline-flex items-stretch border border-white/25 hover:border-av3ya-neon transition-colors;
+  }
+  .btn-enter-label {
+    @apply px-5 sm:px-7 py-3 text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-white;
+  }
+  .btn-enter-arrow {
+    @apply inline-flex items-center justify-center min-w-[44px] bg-av3ya-neon text-black text-lg font-bold;
+  }
+  .drop-card {
+    @apply border border-white/10 bg-black;
+  }
+  .drop-card-cta {
+    @apply flex items-center justify-between px-4 py-3 border-t border-white/10 text-[10px] tracking-[0.25em] uppercase text-white/70 hover:text-av3ya-neon hover:border-av3ya-neon/40 transition-colors;
+  }
+  .vertical-scroll {
+    @apply absolute left-6 top-1/2 -translate-y-1/2 text-[10px] tracking-[0.4em] uppercase text-white/35;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .vertical-label {
+    @apply absolute right-6 top-1/2 -translate-y-1/2 text-[10px] tracking-[0.35em] uppercase text-white/25;
+    writing-mode: vertical-rl;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  .glass {
-    @apply bg-av3ya-dark/90 border border-av3ya-neon/25;
-  }
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-av3ya-neon text-white font-semibold rounded-full transition-all hover:bg-av3ya-pink hover:shadow-neon active:scale-95;
-  }
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-av3ya-purple/60 text-av3ya-mist font-medium rounded-full transition-all hover:bg-av3ya-purple/15 hover:border-av3ya-neon/70;
+  .anime-glow-text {
+    text-shadow: 0 0 16px rgba(255, 45, 149, 0.55);
   }
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
   }
-  .touch-manipulation {
-    touch-action: manipulation;
+  .btn-primary {
+    @apply btn-enter;
   }
-  .anime-glow-text {
-    text-shadow: 0 0 12px rgba(255, 45, 149, 0.65), 0 0 24px rgba(176, 38, 255, 0.35);
-  }
-}
-
-@supports (padding: max(0px)) {
-  body {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-white/25 text-white text-xs tracking-[0.2em] uppercase hover:border-av3ya-neon hover:text-av3ya-neon transition-colors;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0014;
+  background: #000;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ff2d95, #b026ff);
-  border-radius: 3px;
+  background: #ff2d95;
 }

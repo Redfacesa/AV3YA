@@ -3,86 +3,51 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import Av3yaLogo from '@/components/Av3yaLogo';
+import Av3yaEnterButton from '@/components/Av3yaEnterButton';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-end overflow-hidden bg-black">
       <div className="absolute inset-0">
         <Image
           src="/brand/hero-main.png"
-          alt=""
+          alt="AV3YA neon city streetwear"
           fill
           priority
-          className="object-cover object-center scale-105 opacity-50"
+          className="object-cover object-center"
+          sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-av3ya-black via-av3ya-dark/95 to-av3ya-purple/30" />
-        <div className="absolute inset-0 bg-av3ya-grid bg-grid opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-av3ya-black via-transparent to-av3ya-purple/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
       </div>
 
-      <div className="relative section-padding w-full pt-24 pb-16 lg:pt-28 lg:pb-20">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-6 items-center max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center lg:text-left order-2 lg:order-1"
-          >
-            <Av3yaLogo variant="full" animated className="mb-6 mx-auto lg:mx-0" priority />
+      <span className="vertical-scroll hidden lg:block" aria-hidden>
+        SCROLL
+      </span>
 
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-av3ya-pink mb-6 shadow-neon-sm">
-              <Sparkles size={14} />
-              AV3YA Syndicate · one of a kind
-            </span>
+      <div className="relative w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-28 pb-16 lg:pb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
+          className="max-w-xl"
+        >
+          <p className="text-av3ya-neon text-sm sm:text-base font-display tracking-[0.35em] uppercase mb-3 anime-glow-text">
+            One of a kind
+          </p>
+          <p className="text-white/45 text-xs tracking-[0.25em] mb-6">ユニークなもの</p>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl tracking-tight mb-6 text-balance">
-              Don&apos;t just wear
-              <br />
-              <span className="text-av3ya-neon anime-glow-text">the culture.</span>
-            </h1>
+          <h1 className="font-display text-[clamp(3.5rem,12vw,7rem)] leading-[0.9] tracking-tight text-white mb-6">
+            AV3YA
+          </h1>
 
-            <p className="text-base sm:text-lg text-white/65 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Experience it. Anime energy, neon streetwear, and pieces built to make people stop, look twice, and feel
-              something.
-            </p>
+          <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-md mb-10">
+            A brand for the outcasts, the originals, the ones who create their own path. Different by design.
+            Unapologetically original.
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/shop" className="btn-primary text-lg">
-                Shop the drop
-                <ArrowRight size={20} />
-              </Link>
-              <Link href="#story" className="btn-secondary text-lg">
-                Our story
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            className="order-1 lg:order-2"
-          >
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-[2rem] border border-av3ya-neon/30 bg-gradient-to-b from-av3ya-neon/10 to-av3ya-purple/5 shadow-neon-sm" />
-              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10">
-                <Image
-                  src="/products/syndicate-pink-black.png"
-                  alt="AV3YA Syndicate tracksuit in neon pink"
-                  width={800}
-                  height={900}
-                  priority
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <p className="text-center text-xs text-white/40 mt-3 tracking-[0.18em] uppercase">
-                Different by design
-              </p>
-            </div>
-          </motion.div>
-        </div>
+          <Av3yaEnterButton href="/shop" label="ENTER AV3YA" />
+        </motion.div>
       </div>
     </section>
   );

@@ -1,21 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter, Orbitron } from 'next/font/google';
+import { Bebas_Neue, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AV3YA_SOCIAL } from '@/lib/social';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-display' });
+const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-display' });
 
 export const metadata: Metadata = {
-  title: 'AV3YA — Anime streetwear & neon fashion',
-  description:
-    'Limited anime-inspired drops, bold streetwear, and instant checkout with RedFace Pay.',
-  keywords: ['AV3YA', 'anime fashion', 'streetwear', 'South Africa', 'RedFace Pay'],
+  title: 'AV3YA — One of a kind streetwear',
+  description: 'A brand for the outcasts, the originals, the ones who create their own path.',
   openGraph: {
     title: 'AV3YA',
-    description: 'Don\'t just wear the culture. Experience it.',
+    description: 'One of a kind. Different by design.',
     type: 'website',
     images: [{ url: '/brand/hero-main.png' }],
   },
@@ -37,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${orbitron.variable} antialiased bg-av3ya-black text-av3ya-mist`}>
+      <body className={`${inter.variable} ${bebas.variable} antialiased bg-black text-white`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

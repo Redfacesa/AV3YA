@@ -15,9 +15,9 @@ type Props = {
 };
 
 const SIZES: Record<Variant, { width: number; height: number; className: string }> = {
-  icon: { width: 120, height: 40, className: 'h-9 w-auto lg:h-10' },
-  full: { width: 180, height: 56, className: 'h-10 lg:h-12 w-auto' },
-  'full-stacked': { width: 240, height: 96, className: 'h-20 lg:h-24 w-auto' },
+  icon: { width: 100, height: 32, className: 'h-7 w-auto' },
+  full: { width: 140, height: 44, className: 'h-8 sm:h-9 w-auto' },
+  'full-stacked': { width: 220, height: 72, className: 'h-16 lg:h-20 w-auto' },
 };
 
 export default function Av3yaLogo({
@@ -41,8 +41,8 @@ export default function Av3yaLogo({
 
   const content = animated ? (
     <motion.div
-      initial={{ opacity: 0, y: 8, scale: 0.92 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className={className}
     >

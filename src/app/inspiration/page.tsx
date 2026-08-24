@@ -1,70 +1,33 @@
 'use client';
 
-import { Instagram, Facebook, Mail } from 'lucide-react';
-import { AV3YA_SOCIAL, AV3YA_SOCIAL_LINKS } from '@/lib/social';
+import { AV3YA_SOCIAL } from '@/lib/social';
 
 export default function InspirationPage() {
-  const placeholders = Array.from({ length: 12 }, (_, i) => i);
-  const primarySocial = AV3YA_SOCIAL_LINKS[0];
+  const placeholders = Array.from({ length: 8 }, (_, i) => i);
 
   return (
-    <div className="pt-24 pb-16">
-      <div className="section-padding mb-8">
-        <h1 className="font-display text-4xl mb-2">Fashion Inspiration</h1>
-        <p className="text-white/50 mb-6">Seasonal outfits, trending looks, and AV3YA Syndicate energy</p>
-        <div className="flex flex-wrap gap-3">
-          {AV3YA_SOCIAL_LINKS.map((link) => {
-            const Icon = link.id === 'instagram' ? Instagram : Facebook;
-            return (
-              <a
-                key={link.id}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm hover:border-av3ya-neon/40 transition-colors"
-              >
-                <Icon size={16} className="text-av3ya-neon" />
-                Follow on {link.label}
-              </a>
-            );
-          })}
-          <a
-            href={AV3YA_SOCIAL.email}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm hover:border-av3ya-neon/40 transition-colors"
-          >
-            <Mail size={16} className="text-av3ya-neon" />
-            av3ya.inc@gmail.com
-          </a>
-        </div>
+    <div className="pt-24 pb-16 bg-black min-h-screen">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 mb-10">
+        <p className="text-av3ya-neon text-xs tracking-[0.35em] uppercase mb-3">Characters</p>
+        <h1 className="font-display text-5xl sm:text-6xl text-white mb-4">AV3YA WORLD</h1>
+        <p className="text-white/50 text-sm max-w-lg">
+          The faces, moods, and energy behind the Syndicate. Anime-inspired looks from the AV3YA universe.
+        </p>
+        <a href={AV3YA_SOCIAL.email} className="inline-block mt-6 text-xs tracking-[0.2em] uppercase text-white/50 hover:text-av3ya-neon transition-colors">
+          av3ya.inc@gmail.com
+        </a>
       </div>
 
-      <div className="columns-2 md:columns-3 lg:columns-4 gap-4 section-padding">
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-3 px-4 sm:px-6 lg:px-10 max-w-[1400px] mx-auto">
         {placeholders.map((i) => (
           <div
             key={i}
-            className="break-inside-avoid mb-4 rounded-2xl overflow-hidden glass aspect-[3/4] flex items-center justify-center text-white/20"
+            className="break-inside-avoid mb-3 aspect-[3/4] border border-white/10 bg-zinc-950 flex items-center justify-center"
           >
-            <span className="text-4xl">✨</span>
+            <span className="font-display text-2xl text-white/15">AV3YA</span>
           </div>
         ))}
       </div>
-      {primarySocial ? (
-        <p className="text-center text-white/30 text-sm mt-8">
-          More looks on{' '}
-          <a
-            href={primarySocial.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-av3ya-neon hover:text-white transition-colors"
-          >
-            {primarySocial.handle}
-          </a>
-        </p>
-      ) : (
-        <p className="text-center text-white/30 text-sm mt-8">
-          Follow AV3YA for drops and lookbooks. Instagram link coming soon.
-        </p>
-      )}
     </div>
   );
 }
