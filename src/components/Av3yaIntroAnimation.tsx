@@ -39,7 +39,7 @@ export default function Av3yaIntroAnimation({ onDone }: { onDone?: () => void })
         transition={{ repeat: Infinity, duration: 1.6 }}
         className="mb-8"
       >
-        <Av3yaLogo variant="full-stacked" animated />
+        <Av3yaLogo variant="full-stacked" animated className="invert" />
       </motion.div>
 
       <div className="relative w-48 h-64">

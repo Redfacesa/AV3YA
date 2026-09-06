@@ -34,7 +34,7 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-black/10 backdrop-blur-sm">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16 lg:h-[72px]">
-          <Av3yaLogo variant="full" href="/" priority className="shrink-0 brightness-0" />
+          <Av3yaLogo variant="full" href="/" priority className="shrink-0" />
 
           <nav className="hidden lg:flex items-center gap-10 xl:gap-14">
             {NAV.map((item) => {

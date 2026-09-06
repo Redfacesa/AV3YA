@@ -23,7 +23,7 @@ export default function Footer({ social }: Props) {
               alt="AV3YA"
               width={160}
               height={48}
-              className="h-10 w-auto object-contain brightness-0"
+              className="h-10 w-auto object-contain"
             />
           </Link>
           <p className="text-black/40 text-xs max-w-xs leading-relaxed">

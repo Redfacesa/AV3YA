@@ -35,7 +35,7 @@ export default function Av3yaLogo({
       width={size.width}
       height={size.height}
       priority={priority}
-      className={`object-contain ${size.className}`}
+      className={`object-contain bg-transparent ${size.className}`}
     />
   );
 
