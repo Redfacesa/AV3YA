@@ -49,7 +49,7 @@ export default function RedFacePayButtons({ amount, label, onBuyNow, className =
             href={payUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-1.5 p-3 rounded-xl glass text-xs text-white/60 hover:text-av3ya-neon hover:border-av3ya-neon/30 transition-all"
+            className="flex flex-col items-center gap-1.5 p-3 rounded-xl glass text-xs text-black/60 hover:text-black hover:border-black/30 transition-all"
           >
             <m.icon size={20} />
             {m.label}

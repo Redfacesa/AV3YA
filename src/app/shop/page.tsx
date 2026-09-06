@@ -3,7 +3,7 @@ import ShopClient from './ShopClient';
 
 export default function Page() {
   return (
-    <Suspense fallback={<div className="pt-24 section-padding text-white/40">Loading shop...</div>}>
+    <Suspense fallback={<div className="pt-24 section-padding text-black/40">Loading shop...</div>}>
       <ShopClient />
     </Suspense>
   );

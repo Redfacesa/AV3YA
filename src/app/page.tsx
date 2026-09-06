@@ -29,7 +29,11 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero />
+      <Hero
+        experiments={allProducts.length || 3}
+        specimens={allProducts.reduce((n, p) => n + (p.stock_quantity ?? 1), 0) || 27}
+        testing={featured.length || 5}
+      />
       <NavGrid />
       <NewDropSection products={newDrop} />
       <ProductRail

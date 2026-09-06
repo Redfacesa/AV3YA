@@ -42,7 +42,7 @@ export default function AssistantPage() {
               <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm ${
-                    msg.role === 'user' ? 'bg-av3ya-neon text-av3ya-black' : 'bg-white/10'
+                    msg.role === 'user' ? 'bg-av3ya-neon text-av3ya-black' : 'bg-black/5'
                   }`}
                 >
                   {msg.text}
@@ -51,7 +51,7 @@ export default function AssistantPage() {
             ))}
           </div>
 
-          <div className="p-4 border-t border-white/10">
+          <div className="p-4 border-t border-black/10">
             <div className="flex flex-wrap gap-2 mb-3">
               {SUGGESTIONS.map((s) => (
                 <button
@@ -72,7 +72,7 @@ export default function AssistantPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me anything about fashion..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-3 focus:border-av3ya-neon outline-none text-sm"
+                className="flex-1 bg-black/5 border border-black/10 rounded-full px-4 py-3 focus:border-av3ya-neon outline-none text-sm"
               />
               <button type="submit" className="btn-primary !px-4 !py-3">
                 <Send size={18} />

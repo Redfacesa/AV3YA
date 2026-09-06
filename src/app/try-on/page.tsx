@@ -106,7 +106,7 @@ export default function TryOnPage() {
         <div className="text-center mb-12">
           <span className="text-av3ya-neon text-sm uppercase tracking-wider">AI Virtual Try-On</span>
           <h1 className="font-display text-4xl lg:text-5xl mt-2 mb-4">Try Before You Buy</h1>
-          <p className="text-white/50 max-w-xl mx-auto">
+          <p className="text-black/50 max-w-xl mx-auto">
             Upload your photo, pick an item from our catalog, and OpenRouter image models generate a realistic try-on preview.
           </p>
         </div>
@@ -124,15 +124,15 @@ export default function TryOnPage() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="glass rounded-2xl p-8">
             <h2 className="font-semibold mb-4">1. Upload your photo</h2>
-            <label className="block border-2 border-dashed border-white/20 rounded-xl p-8 text-center cursor-pointer hover:border-av3ya-neon/50 transition-colors">
+            <label className="block border-2 border-dashed border-black/15 rounded-xl p-8 text-center cursor-pointer hover:border-av3ya-neon/50 transition-colors">
               <input type="file" accept="image/*" onChange={handleUpload} className="hidden" />
               {photo ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={photo} alt="Your photo" className="max-h-72 mx-auto rounded-lg object-contain" />
               ) : (
                 <>
-                  <Upload size={40} className="mx-auto mb-4 text-white/30" />
-                  <p className="text-white/50">Selfie or full-body photo</p>
+                  <Upload size={40} className="mx-auto mb-4 text-black/30" />
+                  <p className="text-black/50">Selfie or full-body photo</p>
                 </>
               )}
             </label>
@@ -150,10 +150,10 @@ export default function TryOnPage() {
                     type="button"
                     onClick={() => { setSelected(p); setResult(null); setError(null); }}
                     className={`rounded-xl border p-2 text-left transition-colors ${
-                      active ? 'border-av3ya-neon bg-av3ya-neon/10' : 'border-white/10 hover:border-white/30'
+                      active ? 'border-black bg-black/5' : 'border-black/10 hover:border-black/30'
                     }`}
                   >
-                    <div className="relative aspect-square rounded-lg overflow-hidden bg-white/5 mb-2">
+                    <div className="relative aspect-square rounded-lg overflow-hidden bg-black/5 mb-2">
                       {cover ? (
                         <Image src={cover} alt={p.name} fill className="object-cover" />
                       ) : (
@@ -166,7 +166,7 @@ export default function TryOnPage() {
                 );
               })}
               {!products.length && (
-                <p className="col-span-2 text-sm text-white/40 text-center py-8">No products in catalog yet.</p>
+                <p className="col-span-2 text-sm text-black/40 text-center py-8">No products in catalog yet.</p>
               )}
             </div>
           </div>
@@ -174,11 +174,11 @@ export default function TryOnPage() {
 
         {models.length > 0 && (
           <div className="mt-6 glass rounded-xl p-4 max-w-xl mx-auto">
-            <label className="text-xs text-white/40 uppercase tracking-wide">Image model (OpenRouter)</label>
+            <label className="text-xs text-black/40 uppercase tracking-wide">Image model (OpenRouter)</label>
             <select
               value={model}
               onChange={(e) => setModel(e.target.value)}
-              className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-2.5 text-sm"
+              className="mt-2 w-full rounded-xl border border-black/10 bg-white px-4 py-2.5 text-sm"
             >
               {models.map((m) => (
                 <option key={m.id} value={m.id}>
@@ -205,8 +205,8 @@ export default function TryOnPage() {
         {generating && (
           <div className="mt-12 glass rounded-2xl p-16 text-center">
             <div className="w-12 h-12 border-2 border-av3ya-neon border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-white/50">OpenRouter is creating your virtual try-on…</p>
-            <p className="text-xs text-white/30 mt-2">Image-to-image · usually 15–60 seconds</p>
+            <p className="text-black/50">OpenRouter is creating your virtual try-on…</p>
+            <p className="text-xs text-black/30 mt-2">Image-to-image · usually 15–60 seconds</p>
           </div>
         )}
 
@@ -214,11 +214,11 @@ export default function TryOnPage() {
           <div className="mt-12 glass rounded-2xl p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-semibold">Your try-on result</h2>
-              <button type="button" onClick={() => setResult(null)} className="p-2 text-white/50 hover:text-white" aria-label="Close result">
+              <button type="button" onClick={() => setResult(null)} className="p-2 text-black/50 hover:text-black" aria-label="Close result">
                 <X size={18} />
               </button>
             </div>
-            <div className="relative max-w-md mx-auto aspect-[3/4] rounded-xl overflow-hidden bg-white/5">
+            <div className="relative max-w-md mx-auto aspect-[3/4] rounded-xl overflow-hidden bg-black/5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={result} alt="Try-on result" className="w-full h-full object-contain" />
             </div>

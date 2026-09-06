@@ -68,7 +68,7 @@ export default function AIFeatures() {
             Powered by AI
           </span>
           <h2 className="font-display text-4xl lg:text-5xl mb-4">The Future of Fashion</h2>
-          <p className="text-white/50 max-w-xl mx-auto">
+          <p className="text-black/50 max-w-xl mx-auto">
             Shopping reimagined with OpenRouter image models and RedFace Pay.
           </p>
         </div>
@@ -90,11 +90,11 @@ export default function AIFeatures() {
                 <div className="w-12 h-12 rounded-xl bg-av3ya-neon/10 flex items-center justify-center mb-4 group-hover:bg-av3ya-neon/20 transition-colors">
                   <feature.icon size={24} className="text-av3ya-neon" />
                 </div>
-                <span className="text-xs text-white/30 uppercase tracking-wider">{feature.phase}</span>
+                <span className="text-xs text-black/30 uppercase tracking-wider">{feature.phase}</span>
                 <h3 className="font-semibold text-lg mt-1 mb-2 group-hover:text-av3ya-neon transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-white/40 text-sm leading-relaxed">{feature.description}</p>
+                <p className="text-black/40 text-sm leading-relaxed">{feature.description}</p>
               </button>
             </motion.div>
           ))}
@@ -115,12 +115,12 @@ export default function AIFeatures() {
             aria-labelledby="feature-dialog-title"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative w-full max-w-lg glass rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl"
+            className="relative w-full max-w-lg glass rounded-2xl p-6 sm:p-8 border border-black/10 shadow-2xl"
           >
             <button
               type="button"
               onClick={close}
-              className="absolute top-4 right-4 p-2 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full text-black/60 hover:text-black hover:bg-black/5 transition-colors"
               aria-label="Close"
             >
               <X size={20} />
@@ -129,9 +129,9 @@ export default function AIFeatures() {
             <div className="w-12 h-12 rounded-xl bg-av3ya-neon/10 flex items-center justify-center mb-4">
               <active.icon size={24} className="text-av3ya-neon" />
             </div>
-            <span className="text-xs text-white/30 uppercase tracking-wider">{active.phase}</span>
+            <span className="text-xs text-black/30 uppercase tracking-wider">{active.phase}</span>
             <h3 id="feature-dialog-title" className="font-display text-2xl mt-1 mb-3">{active.title}</h3>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">{active.description}</p>
+            <p className="text-black/60 text-sm leading-relaxed mb-6">{active.description}</p>
 
             <div className="flex flex-wrap gap-3">
               <Link href={active.href} className="btn-primary text-sm" onClick={close}>

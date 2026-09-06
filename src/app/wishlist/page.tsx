@@ -22,7 +22,7 @@ export default function WishlistPage() {
     return (
       <div className="pt-32 pb-16 section-padding text-center">
         <h1 className="font-display text-3xl mb-4">Your Wishlist</h1>
-        <p className="text-white/50 mb-8">Save items you love by tapping the heart icon.</p>
+        <p className="text-black/50 mb-8">Save items you love by tapping the heart icon.</p>
         <Link href="/shop" className="btn-primary">Browse Shop <ArrowRight size={18} /></Link>
       </div>
     );

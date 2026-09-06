@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Bebas_Neue, Inter } from 'next/font/google';
+import { Bebas_Neue, IBM_Plex_Mono, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,15 +9,16 @@ import { getAv3yaConfig, getMerchantIdFromConfig } from '@/lib/platform-config';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-display' });
+const plex = IBM_Plex_Mono({ weight: ['400', '500'], subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
-  title: 'AV3YA — One of a kind streetwear',
-  description: 'A brand for the outcasts, the originals, the ones who create their own path.',
+  title: 'AV3YA Labs — The future is currently under development',
+  description: 'Clinical streetwear from AV3YA Labs. Experiments in fabric, silhouette, and identity.',
   openGraph: {
-    title: 'AV3YA',
-    description: 'One of a kind. Different by design.',
+    title: 'AV3YA Labs',
+    description: 'The future is currently under development.',
     type: 'website',
-    images: [{ url: '/brand/hero-main.png' }],
+    images: [{ url: '/brand/hero-main.jpg' }],
   },
   other: {
     'instagram:site': AV3YA_SOCIAL.instagram,
@@ -43,7 +44,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${bebas.variable} antialiased bg-black text-white`}>
+      <body className={`${inter.variable} ${bebas.variable} ${plex.variable} antialiased bg-av3ya-lab text-av3ya-black`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

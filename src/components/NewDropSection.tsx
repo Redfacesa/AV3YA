@@ -14,7 +14,7 @@ export default function NewDropSection({ products }: Props) {
   const drops = products.slice(0, 2);
 
   return (
-    <section className="relative bg-black py-16 lg:py-24 overflow-hidden">
+    <section className="relative bg-av3ya-lab py-16 lg:py-24 overflow-hidden">
       <span className="vertical-label hidden xl:block" aria-hidden>
         ALL COLLECTION
       </span>
@@ -22,18 +22,18 @@ export default function NewDropSection({ products }: Props) {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-28">
-            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-none mb-6">
+            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl text-black leading-none mb-6">
               NEW
               <br />
               DROP
             </h2>
-            <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-8">
+            <p className="text-black/50 text-sm leading-relaxed max-w-xs mb-8">
               Limited pieces built to be experienced. Upload your first products in Admin to fill this section.
             </p>
             <Av3yaEnterButton href="/shop" label="SHOP NOW" />
             <Link
               href="/shop"
-              className="inline-block mt-6 text-[10px] tracking-[0.25em] uppercase text-white/45 hover:text-av3ya-neon transition-colors"
+              className="inline-block mt-6 text-[10px] tracking-[0.25em] uppercase text-black/45 hover:text-black transition-colors"
             >
               View all products ↗
             </Link>
@@ -45,7 +45,7 @@ export default function NewDropSection({ products }: Props) {
                 const cover = product.images?.[0] ?? product.image_url;
                 return (
                   <article key={product.id} className="drop-card group">
-                    <Link href={`/product/${product.id}`} className="block relative aspect-[3/4] overflow-hidden bg-zinc-950">
+                    <Link href={`/product/${product.id}`} className="block relative aspect-[3/4] overflow-hidden bg-neutral-100">
                       {cover ? (
                         <Image
                           src={cover}
@@ -55,7 +55,7 @@ export default function NewDropSection({ products }: Props) {
                           sizes="(max-width: 768px) 50vw, 33vw"
                         />
                       ) : (
-                        <div className="absolute inset-0 flex items-center justify-center text-white/20 font-display text-xl">
+                        <div className="absolute inset-0 flex items-center justify-center text-black/20 font-display text-xl">
                           AV3YA
                         </div>
                       )}
@@ -64,7 +64,7 @@ export default function NewDropSection({ products }: Props) {
                         <p className="font-display text-sm sm:text-base tracking-wide text-white mb-1">
                           {product.name.toUpperCase()}
                         </p>
-                        <p className="text-av3ya-neon text-sm font-semibold tracking-wider">{fmtZar(product.price)}</p>
+                        <p className="text-white text-sm font-semibold tracking-wider">{fmtZar(product.price)}</p>
                       </div>
                     </Link>
                     <Link href={`/product/${product.id}`} className="drop-card-cta">
@@ -79,11 +79,11 @@ export default function NewDropSection({ products }: Props) {
             <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
               {[0, 1].map((slot) => (
                 <article key={slot} className="drop-card">
-                  <div className="relative aspect-[3/4] bg-zinc-950 border-b border-white/10 flex flex-col items-center justify-center gap-3 p-6 text-center">
-                    <span className="font-display text-2xl text-white/15">DROP {slot + 1}</span>
-                    <p className="text-white/35 text-xs tracking-[0.15em] uppercase">Product image from your catalog</p>
+                  <div className="relative aspect-[3/4] bg-neutral-100 border-b border-black/10 flex flex-col items-center justify-center gap-3 p-6 text-center">
+                    <span className="font-display text-2xl text-black/15">DROP {slot + 1}</span>
+                    <p className="text-black/35 text-xs tracking-[0.15em] uppercase">Product image from your catalog</p>
                   </div>
-                  <div className="drop-card-cta text-white/30 pointer-events-none">
+                  <div className="drop-card-cta text-black/30 pointer-events-none">
                     <span>COMING SOON</span>
                     <span className="btn-enter-arrow text-base opacity-40">↗</span>
                   </div>

@@ -38,16 +38,16 @@ export default function ShopClient() {
   return (
     <div className="pt-24 pb-16">
       <div className="section-padding mb-12">
-        <h1 className="font-display text-4xl lg:text-5xl mb-4">Shop</h1>
-        <p className="text-white/50">Premium fashion for every occasion</p>
+        <h1 className="font-display text-4xl lg:text-5xl mb-4">EXPERIMENTS</h1>
+        <p className="text-black/50 font-mono text-xs tracking-[0.2em] uppercase">Our ongoing research</p>
       </div>
 
       <div className="section-padding mb-8 overflow-x-auto">
         <div className="flex gap-2 pb-2">
           <a
             href="/shop"
-            className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
-              !categorySlug ? 'bg-av3ya-neon text-av3ya-black font-medium' : 'glass text-white/60 hover:text-white'
+            className={`px-4 py-2 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-colors ${
+              !categorySlug ? 'border-black text-black font-medium' : 'border-transparent text-black/45 hover:text-black'
             }`}
           >
             All
@@ -56,8 +56,8 @@ export default function ShopClient() {
             <a
               key={cat.id}
               href={`/shop?category=${cat.slug}`}
-              className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
-                categorySlug === cat.slug ? 'bg-av3ya-neon text-av3ya-black font-medium' : 'glass text-white/60 hover:text-white'
+              className={`px-4 py-2 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-colors ${
+                categorySlug === cat.slug ? 'border-black text-black font-medium' : 'border-transparent text-black/45 hover:text-black'
               }`}
             >
               {cat.emoji} {cat.name}
@@ -67,7 +67,7 @@ export default function ShopClient() {
       </div>
 
       {loading ? (
-        <div className="section-padding py-24 text-center text-white/40">Loading collection...</div>
+        <div className="section-padding py-24 text-center text-black/40">Loading collection...</div>
       ) : (
         <ProductGrid products={products} title="" />
       )}

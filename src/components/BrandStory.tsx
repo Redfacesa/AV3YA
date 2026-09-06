@@ -47,7 +47,7 @@ export default function BrandStory() {
             Don&apos;t just wear the culture.{' '}
             <span className="text-av3ya-neon anime-glow-text">Experience it.</span>
           </h2>
-          <div className="space-y-4 text-white/65 leading-relaxed">
+          <div className="space-y-4 text-black/60 leading-relaxed">
             <p>
               AV3YA was created from a simple idea: clothing should be more than something you wear. It should be
               something you experience.

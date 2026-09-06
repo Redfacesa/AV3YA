@@ -33,7 +33,7 @@ export default function DashboardPage() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h1 className="font-display text-4xl mb-2">My Account</h1>
-            <p className="text-white/50">Manage orders, appointments, and your style profile</p>
+            <p className="text-black/50">Manage orders, appointments, and your style profile</p>
           </div>
           <a href={buildSsoLoginUrl('/dashboard')} className="btn-secondary text-sm">
             Sign in with RedFace Pay
@@ -56,9 +56,9 @@ export default function DashboardPage() {
         <div className="mt-12 glass rounded-2xl p-8 text-center">
           <Gift size={40} className="text-av3ya-neon mx-auto mb-4" />
           <h2 className="font-display text-2xl mb-2">RedFace Points</h2>
-          <p className="text-white/50 mb-4">Earn points on every purchase. Redeem for discounts and free tailoring.</p>
+          <p className="text-black/50 mb-4">Earn points on every purchase. Redeem for discounts and free tailoring.</p>
           <p className="text-4xl font-bold text-av3ya-neon">0 pts</p>
-          <p className="text-xs text-white/30 mt-2">Sign in to view your balance</p>
+          <p className="text-xs text-black/30 mt-2">Sign in to view your balance</p>
         </div>
       </div>
     </div>

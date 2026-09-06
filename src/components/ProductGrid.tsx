@@ -21,7 +21,7 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
     return (
       <section className="section-padding py-24">
         <h2 className="font-display text-4xl mb-8">{title}</h2>
-        <p className="text-white/50">No products yet. Add items from admin or your RedFace Pay merchant portal.</p>
+        <p className="text-black/50">No products yet. Add items from admin or your RedFace Pay merchant portal.</p>
       </section>
     );
   }
@@ -31,9 +31,9 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
       <div className="flex items-end justify-between mb-12">
         <div>
           <h2 className="font-display text-4xl lg:text-5xl mb-2">{title}</h2>
-          <p className="text-white/50">Curated pieces from our latest collection</p>
+          <p className="text-black/50">Curated pieces from our latest collection</p>
         </div>
-        <Link href="/shop" className="text-av3ya-neon hover:text-white transition-colors text-sm hidden sm:block">
+        <Link href="/shop" className="text-black hover:opacity-60 transition-opacity text-sm hidden sm:block">
           View All →
         </Link>
       </div>
@@ -50,7 +50,7 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
             transition={{ delay: i * 0.08 }}
             className="group"
           >
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white/5 mb-4">
+            <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100 mb-4 border border-black/10">
               <Link href={`/product/${product.id}`}>
                 {cover ? (
                   <Image
@@ -68,7 +68,7 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
                 <button
                   type="button"
                   onClick={() => toggle(product.id)}
-                  className={`w-10 h-10 rounded-full glass flex items-center justify-center transition-colors ${has(product.id) ? 'text-red-400' : 'text-white/70 hover:text-white'}`}
+                  className={`w-10 h-10 rounded-full bg-white border border-black/10 flex items-center justify-center transition-colors ${has(product.id) ? 'text-av3ya-classified' : 'text-black/70 hover:text-black'}`}
                   aria-label="Add to wishlist"
                 >
                   <Heart size={18} fill={has(product.id) ? 'currentColor' : 'none'} />
@@ -76,7 +76,7 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
                 <button
                   type="button"
                   onClick={() => addItem(product)}
-                  className="w-10 h-10 rounded-full glass flex items-center justify-center text-white/70 hover:text-av3ya-neon transition-colors"
+                  className="w-10 h-10 rounded-full bg-white border border-black/10 flex items-center justify-center text-black/70 hover:text-black transition-colors"
                   aria-label="Quick add to cart"
                 >
                   <ShoppingBag size={18} />
@@ -84,23 +84,23 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
               </div>
 
               {product.stock_quantity != null && product.stock_quantity <= 5 && product.stock_quantity > 0 && (
-                <span className="absolute top-3 left-3 px-2 py-1 bg-av3ya-rust/90 text-xs rounded-full">
+                <span className="absolute top-3 left-3 px-2 py-1 bg-av3ya-testing text-white text-xs tracking-widest uppercase">
                   Only {product.stock_quantity} left
                 </span>
               )}
             </div>
 
             <Link href={`/product/${product.id}`}>
-              <h3 className="font-medium mb-1 group-hover:text-av3ya-neon transition-colors line-clamp-1">
+              <h3 className="font-medium mb-1 group-hover:opacity-60 transition-opacity line-clamp-1">
                 {product.name}
               </h3>
             </Link>
 
             <div className="flex items-center justify-between">
-              <span className="text-av3ya-neon font-semibold">{fmtZar(product.price)}</span>
+              <span className="font-semibold font-mono text-sm">{fmtZar(product.price)}</span>
               {product.rating != null && (
-                <span className="flex items-center gap-1 text-xs text-white/40">
-                  <Star size={12} className="text-av3ya-neon fill-av3ya-neon" />
+                <span className="flex items-center gap-1 text-xs text-black/40">
+                  <Star size={12} className="text-black fill-black" />
                   {product.rating.toFixed(1)}
                 </span>
               )}
@@ -111,7 +111,7 @@ export default function ProductGrid({ products, title = 'Featured Products' }: P
                 {product.colors.slice(0, 5).map((c) => (
                   <span
                     key={c.name}
-                    className="w-4 h-4 rounded-full border border-white/20"
+                    className="w-4 h-4 rounded-full border border-black/20"
                     style={{ backgroundColor: c.hex }}
                     title={c.name}
                   />

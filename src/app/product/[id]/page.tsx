@@ -34,7 +34,7 @@ export default function ProductPage() {
   }, [id]);
 
   if (!product) {
-    return <div className="pt-32 section-padding text-white/40">Loading product...</div>;
+    return <div className="pt-32 section-padding text-black/40">Loading product...</div>;
   }
 
   const images = product.images?.length ? product.images : product.image_url ? [product.image_url] : [];
@@ -42,8 +42,8 @@ export default function ProductPage() {
   return (
     <div className="pt-24 pb-16">
       <div className="section-padding">
-        <nav className="text-sm text-white/40 mb-8">
-          <Link href="/shop" className="hover:text-white">Shop</Link>
+        <nav className="text-sm text-black/40 mb-8">
+          <Link href="/shop" className="hover:text-black">Shop</Link>
           {product.category_name && (
             <>
               <span className="mx-2">/</span>
@@ -51,12 +51,12 @@ export default function ProductPage() {
             </>
           )}
           <span className="mx-2">/</span>
-          <span className="text-white/70">{product.name}</span>
+          <span className="text-black/70">{product.name}</span>
         </nav>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div className="space-y-4">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-white/5">
+    <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100 border border-black/10">
               {images[activeImage] ? (
                 <Image src={images[activeImage]} alt={product.name} fill className="object-cover" priority />
               ) : (
@@ -70,8 +70,8 @@ export default function ProductPage() {
                     key={img}
                     type="button"
                     onClick={() => setActiveImage(idx)}
-                    className={`relative aspect-square rounded-xl overflow-hidden bg-white/5 border-2 transition-colors ${
-                      activeImage === idx ? 'border-av3ya-neon' : 'border-transparent'
+                    className={`relative aspect-square rounded-xl overflow-hidden bg-black/5 border-2 transition-colors ${
+                      activeImage === idx ? 'border-black' : 'border-transparent'
                     }`}
                   >
                     <Image src={img} alt="" fill className="object-cover" />
@@ -87,25 +87,28 @@ export default function ProductPage() {
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} className={i < Math.round(product.rating!) ? 'text-av3ya-neon fill-av3ya-neon' : 'text-white/20'} />
+                    <Star key={i} size={14} className={i < Math.round(product.rating!) ? 'text-black fill-black' : 'text-black/20'} />
                   ))}
                 </div>
-                <span className="text-sm text-white/40">({product.review_count ?? 0} reviews)</span>
+                <span className="text-sm text-black/40">({product.review_count ?? 0} reviews)</span>
               </div>
             )}
-            <p className="text-3xl text-av3ya-neon font-semibold mb-6">{fmtZar(product.price)}</p>
-            {product.description && <p className="text-white/60 leading-relaxed mb-8">{product.description}</p>}
+            <div className="flex items-end justify-between gap-4 mb-6">
+              <p className="text-3xl font-mono font-semibold">{fmtZar(product.price)}</p>
+              <p className="lab-chip text-av3ya-active">● In stock</p>
+            </div>
+            {product.description && <p className="text-black/60 leading-relaxed mb-8">{product.description}</p>}
 
             {product.colors && product.colors.length > 0 && (
               <div className="mb-6">
-                <p className="text-sm text-white/50 mb-3">Color: <span className="text-white">{color}</span></p>
+                <p className="text-sm text-black/50 mb-3">Color: <span className="text-black">{color}</span></p>
                 <div className="flex gap-2">
                   {product.colors.map((c) => (
                     <button
                       key={c.name}
                       type="button"
                       onClick={() => setColor(c.name)}
-                      className={`w-8 h-8 rounded-full border-2 transition-all ${color === c.name ? 'border-av3ya-neon scale-110' : 'border-white/20'}`}
+                      className={`w-8 h-8 rounded-full border-2 transition-all ${color === c.name ? 'border-black scale-110' : 'border-black/15'}`}
                       style={{ backgroundColor: c.hex }}
                       title={c.name}
                     />
@@ -116,7 +119,7 @@ export default function ProductPage() {
 
             {product.sizes && product.sizes.length > 0 && (
               <div className="mb-6">
-                <p className="text-sm text-white/50 mb-3">Size</p>
+                <p className="text-sm text-black/50 mb-3">Size</p>
                 <div className="flex flex-wrap gap-2">
                   {product.sizes.map((s) => (
                     <button
@@ -126,10 +129,10 @@ export default function ProductPage() {
                       onClick={() => setSize(s.label)}
                       className={`px-4 py-2 rounded-lg text-sm border transition-all ${
                         size === s.label
-                          ? 'border-av3ya-neon bg-av3ya-neon/10 text-av3ya-neon'
+                          ? 'border-black bg-black text-white'
                           : s.inStock
-                            ? 'border-white/20 hover:border-white/40'
-                            : 'border-white/10 text-white/30 line-through cursor-not-allowed'
+                            ? 'border-black/15 hover:border-black/40'
+                            : 'border-black/10 text-black/30 line-through cursor-not-allowed'
                       }`}
                     >
                       {s.label}
@@ -141,18 +144,18 @@ export default function ProductPage() {
 
             <div className="flex items-center gap-4 mb-8">
               <div className="flex items-center glass rounded-full">
-                <button type="button" onClick={() => setQty(Math.max(1, qty - 1))} className="p-3 text-white/60 hover:text-white">
+                <button type="button" onClick={() => setQty(Math.max(1, qty - 1))} className="p-3 text-black/60 hover:text-black">
                   <Minus size={16} />
                 </button>
                 <span className="w-10 text-center">{qty}</span>
-                <button type="button" onClick={() => setQty(qty + 1)} className="p-3 text-white/60 hover:text-white">
+                <button type="button" onClick={() => setQty(qty + 1)} className="p-3 text-black/60 hover:text-black">
                   <Plus size={16} />
                 </button>
               </div>
               <button
                 type="button"
                 onClick={() => toggle(product.id)}
-                className={`p-3 rounded-full glass ${has(product.id) ? 'text-red-400' : 'text-white/60 hover:text-white'}`}
+                className={`p-3 rounded-full glass ${has(product.id) ? 'text-red-400' : 'text-black/60 hover:text-black'}`}
               >
                 <Heart size={20} fill={has(product.id) ? 'currentColor' : 'none'} />
               </button>
@@ -162,10 +165,10 @@ export default function ProductPage() {
               <button
                 type="button"
                 onClick={() => addItem(product, { size, color, quantity: qty })}
-                className="btn-secondary w-full flex"
+                className="btn-primary w-full flex"
               >
                 <ShoppingBag size={18} />
-                Add to Cart
+                Acquire Specimen
               </button>
               <RedFacePayButtons
                 amount={product.price * qty}
@@ -176,13 +179,13 @@ export default function ProductPage() {
 
             {product.fabric && (
               <div className="glass rounded-xl p-4 mb-4">
-                <p className="text-sm text-white/50">Fabric</p>
+                <p className="text-sm text-black/50">Fabric</p>
                 <p className="text-sm">{product.fabric}</p>
               </div>
             )}
             {product.delivery_info && (
-              <div className="flex items-start gap-3 text-sm text-white/50">
-                <Truck size={18} className="text-av3ya-neon shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 text-sm text-black/50">
+                <Truck size={18} className="text-black shrink-0 mt-0.5" />
                 <p>{product.delivery_info}</p>
               </div>
             )}

@@ -49,7 +49,7 @@ export default function CartPage() {
     return (
       <div className="pt-32 pb-16 section-padding text-center">
         <h1 className="font-display text-3xl mb-4">Your Cart is Empty</h1>
-        <p className="text-white/50 mb-8">Discover something you love.</p>
+        <p className="text-black/50 mb-8">Discover something you love.</p>
         <Link href="/shop" className="btn-primary">
           Shop Now <ArrowRight size={18} />
         </Link>
@@ -69,7 +69,7 @@ export default function CartPage() {
             const key = `${item.product.id}-${item.size}-${item.color}`;
             return (
               <div key={key} className="glass rounded-xl p-4 flex gap-4">
-                <div className="relative w-24 h-28 rounded-lg overflow-hidden bg-white/5 shrink-0">
+                <div className="relative w-24 h-28 rounded-lg overflow-hidden bg-black/5 shrink-0">
                   {item.product.image_url ? (
                     <Image src={item.product.image_url} alt={item.product.name} fill className="object-cover" />
                   ) : (
@@ -79,17 +79,17 @@ export default function CartPage() {
                 <div className="flex-1">
                   <h3 className="font-medium">{item.product.name}</h3>
                   {(item.size || item.color) && (
-                    <p className="text-sm text-white/40">
+                    <p className="text-sm text-black/40">
                       {[item.size, item.color].filter(Boolean).join(' · ')}
                     </p>
                   )}
-                  <p className="text-av3ya-neon mt-1">{fmtZar(item.product.price)}</p>
+                  <p className="text-black mt-1 font-mono text-sm">{fmtZar(item.product.price)}</p>
                 </div>
                 <div className="flex flex-col items-end justify-between">
                   <button
                     type="button"
                     onClick={() => removeItem(item.product.id, item.size, item.color)}
-                    className="text-white/30 hover:text-red-400 transition-colors"
+                    className="text-black/30 hover:text-red-400 transition-colors"
                   >
                     <Trash2 size={16} />
                   </button>
@@ -97,7 +97,7 @@ export default function CartPage() {
                     <button
                       type="button"
                       onClick={() => updateQuantity(item.product.id, item.quantity - 1, item.size, item.color)}
-                      className="p-1 text-white/50 hover:text-white"
+                      className="p-1 text-black/50 hover:text-black"
                     >
                       <Minus size={14} />
                     </button>
@@ -105,7 +105,7 @@ export default function CartPage() {
                     <button
                       type="button"
                       onClick={() => updateQuantity(item.product.id, item.quantity + 1, item.size, item.color)}
-                      className="p-1 text-white/50 hover:text-white"
+                      className="p-1 text-black/50 hover:text-black"
                     >
                       <Plus size={14} />
                     </button>
@@ -119,7 +119,7 @@ export default function CartPage() {
         <div className="glass rounded-2xl p-6 space-y-4">
           <div className="flex justify-between text-lg">
             <span>Subtotal</span>
-            <span className="font-semibold text-av3ya-neon">{fmtZar(cartTotal)}</span>
+            <span className="font-semibold font-mono">{fmtZar(cartTotal)}</span>
           </div>
           <button
             type="button"

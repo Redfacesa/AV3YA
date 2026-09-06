@@ -6,7 +6,7 @@ type Props = {
   className?: string;
 };
 
-/** Mockup-style CTA: outlined label + pink arrow box */
+/** Lab-style CTA: black label + green status arrow */
 export default function Av3yaEnterButton({
   href = '/shop',
   label = 'ENTER AV3YA',

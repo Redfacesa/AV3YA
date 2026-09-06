@@ -85,12 +85,12 @@ export default function AdminGate({
   }
 
   if (!ready) {
-    return <div className="pt-32 section-padding text-white/40">Loading admin...</div>;
+    return <div className="theme-admin bg-black text-white pt-32 section-padding text-white/40">Loading admin...</div>;
   }
 
   if (!allowed) {
     return (
-      <div className="pt-32 pb-16 section-padding max-w-lg mx-auto">
+      <div className="theme-admin bg-black text-white pt-32 pb-16 section-padding max-w-lg mx-auto">
         <div className="text-center mb-8">
           <Shield size={48} className="mx-auto mb-6 text-av3ya-neon" />
           <h1 className="font-display text-3xl mb-4">AV3YA Admin</h1>
@@ -174,7 +174,7 @@ export default function AdminGate({
   }
 
   return (
-    <div>
+    <div className="theme-admin bg-black text-white min-h-screen">
       <div className="fixed top-[4.5rem] right-3 sm:top-20 sm:right-4 z-40 flex items-center gap-2">
         <button
           type="button"

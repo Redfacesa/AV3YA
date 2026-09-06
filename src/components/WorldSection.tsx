@@ -14,7 +14,7 @@ export default function WorldSection({ videoUrl }: Props) {
   const direct = embed && isDirectVideoFile(embed);
 
   return (
-    <section id="world" className="bg-black border-t border-white/10 py-16 lg:py-24">
+    <section id="world" className="bg-white border-t border-black/10 py-16 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -22,12 +22,12 @@ export default function WorldSection({ videoUrl }: Props) {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-none mb-6">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-black leading-none mb-6">
             THIS IS
             <br />
             AV3YA
           </h2>
-          <p className="text-white/55 text-sm sm:text-base leading-relaxed max-w-md mb-8">
+          <p className="text-black/55 text-sm sm:text-base leading-relaxed max-w-md mb-8">
             More than clothing. A feeling when you put something on and carry yourself differently. When someone asks
             where you got that. When you know you are not wearing what everyone else is wearing.
           </p>
@@ -39,7 +39,7 @@ export default function WorldSection({ videoUrl }: Props) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative aspect-[16/10] overflow-hidden border border-white/10 bg-black"
+          className="relative aspect-[16/10] overflow-hidden border border-black/10 bg-neutral-100"
         >
           {embed ? (
             direct ? (
@@ -56,18 +56,18 @@ export default function WorldSection({ videoUrl }: Props) {
           ) : (
             <Link
               href="/#story"
-              className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-950 via-black to-av3ya-neon/10 group"
+              className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-neutral-100 group"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,45,149,0.15),transparent_55%)]" />
-              <span className="relative w-16 h-16 rounded-full border-2 border-white/50 flex items-center justify-center text-white text-xl pl-1 group-hover:border-av3ya-neon transition-colors">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(0,0,0,0.06),transparent_55%)]" />
+              <span className="relative w-16 h-16 rounded-full border-2 border-black/40 flex items-center justify-center text-black text-xl pl-1 group-hover:border-black transition-colors">
                 ▶
               </span>
-              <span className="relative text-xs tracking-[0.3em] uppercase text-white/55">
+              <span className="relative text-xs tracking-[0.3em] uppercase text-black/55">
                 Add video in Admin → Storefront
               </span>
             </Link>
           )}
-          <div className="absolute bottom-4 left-4 text-[10px] text-white/35 tracking-widest pointer-events-none">
+          <div className="absolute bottom-4 left-4 text-[10px] text-black/35 tracking-widest pointer-events-none">
             26.2041° S · 28.0473° E
           </div>
         </motion.div>
@@ -78,13 +78,13 @@ export default function WorldSection({ videoUrl }: Props) {
 
 export function StorySection() {
   return (
-    <section id="story" className="bg-black border-t border-white/10 py-16 lg:py-24">
+    <section id="story" className="bg-av3ya-lab border-t border-black/10 py-16 lg:py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-10">
-        <p className="text-av3ya-neon text-xs tracking-[0.35em] uppercase mb-4">About AV3YA</p>
-        <h2 className="font-display text-3xl sm:text-4xl text-white mb-8 leading-tight">
+        <p className="text-black/50 text-xs tracking-[0.35em] uppercase mb-4 font-mono">About the lab</p>
+        <h2 className="font-display text-3xl sm:text-4xl text-black mb-8 leading-tight">
           Don&apos;t just wear the culture. Experience it.
         </h2>
-        <div className="space-y-5 text-white/60 text-sm sm:text-base leading-relaxed">
+        <div className="space-y-5 text-black/60 text-sm sm:text-base leading-relaxed">
           <p>
             AV3YA was created from a simple idea: clothing should be more than something you wear. It should be
             something you experience.

@@ -12,7 +12,7 @@ export default function WardrobePage() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h1 className="font-display text-4xl mb-2">My Wardrobe</h1>
-            <p className="text-white/50">Save and organize your favorite outfits</p>
+            <p className="text-black/50">Save and organize your favorite outfits</p>
           </div>
           <button type="button" className="btn-primary text-sm">
             <Plus size={16} /> New Outfit
@@ -28,9 +28,9 @@ export default function WardrobePage() {
         </div>
 
         <div className="glass rounded-2xl p-16 text-center">
-          <Shirt size={48} className="mx-auto mb-4 text-white/20" />
+          <Shirt size={48} className="mx-auto mb-4 text-black/20" />
           <h2 className="text-xl font-semibold mb-2">Outfit Builder</h2>
-          <p className="text-white/40 mb-6 max-w-md mx-auto">
+          <p className="text-black/40 mb-6 max-w-md mx-auto">
             Drag shirt, pants, shoes, and accessories to build complete outfits. Coming in Phase 2.
           </p>
           <Link href="/shop" className="btn-secondary text-sm">Shop to Build Outfits</Link>
