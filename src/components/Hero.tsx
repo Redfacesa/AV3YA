@@ -2,9 +2,10 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Lock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import LabTurnAnimation from '@/components/LabTurnAnimation';
 import LabChemistryLines from '@/components/LabChemistryLines';
+import { LAB_COLORWAYS } from '@/lib/lab-media';
 
 type Props = {
   experiments?: number;
@@ -13,113 +14,78 @@ type Props = {
 };
 
 export default function Hero({ experiments = 3, specimens = 27, testing = 5 }: Props) {
-  const exp = String(experiments).padStart(2, '0');
-  const spec = String(specimens).padStart(2, '0');
-  const test = String(testing).padStart(2, '0');
-
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-white">
-      <div className="absolute inset-0">
-        <LabTurnAnimation />
-        <div className="absolute inset-y-0 left-0 w-[48%] bg-gradient-to-r from-white/75 via-white/25 to-transparent pointer-events-none" />
-        <LabChemistryLines tone="hero" className="opacity-80" />
-      </div>
+    <section className="relative min-h-[calc(100svh-4rem)] bg-white overflow-hidden">
+      <LabChemistryLines tone="hero" className="opacity-40" />
 
-      <div
-        className="absolute left-3 lg:left-5 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-3 text-[9px] tracking-[0.35em] uppercase text-black/45 z-10"
-        aria-hidden
-      >
-        <span className="h-8 w-px bg-black/20" />
-        <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>Scroll to explore</span>
-        <span className="h-8 w-px bg-black/20" />
-      </div>
-
-      <div className="relative flex-1 w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-28 pb-8 flex flex-col justify-end">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="max-w-xl"
-          >
-            <p className="text-black/70 text-sm sm:text-base font-medium tracking-[0.18em] uppercase mb-2">
-              Welcome to
-            </p>
-            <h1 className="font-display text-[clamp(3.2rem,10vw,7rem)] leading-[0.86] tracking-tight text-black mb-4">
-              AV3YA LABS
-            </h1>
-            <p className="text-black text-sm sm:text-base font-medium tracking-[0.04em] uppercase mb-8 max-w-md">
-              The future is currently under development.
-            </p>
-            <Link
-              href="/shop"
-              className="inline-flex items-center gap-3 bg-black text-white px-6 py-3.5 text-[11px] sm:text-xs font-semibold tracking-[0.28em] uppercase hover:bg-neutral-800 transition-colors"
-            >
-              <span aria-hidden>&gt;</span>
-              Enter lab
-              <span aria-hidden>→</span>
-            </Link>
-          </motion.div>
-
-          <motion.aside
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.12 }}
-            className="w-full max-w-[280px] border border-black/10 bg-white/80 backdrop-blur-md p-5 shadow-sm"
-          >
-            <p className="lab-chip text-black mb-4">Lab access terminal &gt;</p>
-            <dl className="space-y-3 font-mono text-[10px] tracking-[0.16em] uppercase">
-              <div className="flex items-center justify-between gap-4">
-                <dt className="text-black/40">Subject</dt>
-                <dd>AV3YA</dd>
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 pt-24 pb-6 lg:pt-28">
+        <div className="grid lg:grid-cols-2 min-h-[70vh] border border-black/10">
+          {/* Screen 1 — welcome / shop */}
+          <div className="relative flex flex-col justify-between p-6 sm:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-black/10 bg-white/80">
+            <p className="lab-chip text-black/40">Screen 01 · Access</p>
+            <div className="py-10">
+              <p className="text-sm tracking-[0.2em] uppercase text-black/50 mb-3">Welcome to</p>
+              <h1 className="font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.85] mb-4">AV3YA LABS</h1>
+              <p className="text-sm uppercase tracking-[0.08em] text-black/70 max-w-sm mb-8">
+                The future is currently under development.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                <Link href="/shop" className="btn-primary">
+                  Shop now
+                </Link>
+                <Link href="/shop" className="btn-secondary">
+                  Select your product
+                </Link>
               </div>
-              <div className="flex items-center justify-between gap-4">
-                <dt className="text-black/40">Status</dt>
-                <dd className="text-av3ya-active font-medium">● Active</dd>
+              <div className="flex flex-wrap gap-2">
+                {LAB_COLORWAYS.map((look) => (
+                  <Link
+                    key={look.id}
+                    href="/shop"
+                    className="lab-chip border border-black/15 px-3 py-2 hover:bg-black hover:text-white transition-colors"
+                  >
+                    {look.name}
+                  </Link>
+                ))}
               </div>
-              <div className="flex items-center justify-between gap-4">
-                <dt className="text-black/40">Clearance</dt>
-                <dd>Lvl 3+ only</dd>
-              </div>
-            </dl>
-            <svg className="mt-5 w-full h-10 text-black" viewBox="0 0 220 40" aria-hidden>
-              {Array.from({ length: 48 }).map((_, i) => (
-                <rect
-                  key={i}
-                  x={i * 4.6}
-                  y={4}
-                  width={i % 5 === 0 ? 2.4 : 1.2}
-                  height={i % 7 === 0 ? 32 : 24}
-                  fill="currentColor"
-                />
-              ))}
-            </svg>
-          </motion.aside>
-        </div>
-
-        <div className="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-4 border border-black/10 bg-white/85 backdrop-blur-md">
-          <div className="px-4 py-4 border-r border-b lg:border-b-0 border-black/10">
-            <p className="lab-chip text-black/40 mb-1">Experiments</p>
-            <p className="font-mono text-sm tracking-[0.12em] uppercase">
-              {exp} <span className="text-av3ya-active">Active</span>
-            </p>
-          </div>
-          <div className="px-4 py-4 border-b lg:border-b-0 lg:border-r border-black/10">
-            <p className="lab-chip text-black/40 mb-1">Specimens</p>
-            <p className="font-mono text-sm tracking-[0.12em] uppercase">{spec} Available</p>
-          </div>
-          <div className="px-4 py-4 border-r border-black/10">
-            <p className="lab-chip text-black/40 mb-1">Testing</p>
-            <p className="font-mono text-sm tracking-[0.12em] uppercase">
-              {test} <span className="text-av3ya-testing">Ongoing</span>
-            </p>
-          </div>
-          <div className="px-4 py-4 flex items-center justify-between gap-3">
-            <div>
-              <p className="lab-chip text-black/40 mb-1">Classified</p>
-              <p className="font-mono text-sm tracking-[0.12em] uppercase">Top secret</p>
             </div>
-            <Lock size={16} className="text-black/50 shrink-0" aria-hidden />
+            <div className="flex items-center justify-between gap-4 font-mono text-[10px] tracking-[0.16em] uppercase text-black/40">
+              <span>Experiments {String(experiments).padStart(2, '0')}</span>
+              <span>Specimens {String(specimens).padStart(2, '0')}</span>
+              <span>Testing {String(testing).padStart(2, '0')}</span>
+            </div>
+          </div>
+
+          {/* Screen 2 — small looping chamber */}
+          <div className="relative flex flex-col bg-[#f3f5f7] p-5 sm:p-8">
+            <div className="flex items-center justify-between mb-4">
+              <p className="lab-chip text-black/40">Screen 02 · Live viewport</p>
+              <span className="lab-chip text-av3ya-active">● Recording</span>
+            </div>
+
+            <div className="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center bg-black text-white">
+              <ArrowRight size={18} />
+            </div>
+
+            <div className="flex-1 flex items-center justify-center">
+              <div className="relative w-full max-w-[380px]">
+                <div className="lab-viewport-glow absolute -inset-3 rounded-sm pointer-events-none" />
+                <div className="relative border border-black/20 bg-white aspect-[4/3] overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-sky-400/70 via-white to-pink-400/60" />
+                  <div className="absolute inset-2">
+                    <LabTurnAnimation className="h-full w-full" />
+                  </div>
+                  <div className="absolute bottom-2 left-2 right-2 flex justify-between lab-chip text-black/40">
+                    <span>Turntable</span>
+                    <span>GIF · Loop</span>
+                  </div>
+                </div>
+                <div className="mt-3 flex justify-between font-mono text-[9px] tracking-[0.2em] uppercase text-black/35">
+                  <span>Do not upscale</span>
+                  <span>Native specimen feed</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -156,3 +156,42 @@ body {
   transform-origin: center;
   animation: lab-chem-node 3.6s ease-in-out infinite;
 }
+
+.lab-viewport-glow {
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.22), rgba(236, 72, 153, 0.1) 45%, transparent 70%);
+  filter: blur(12px);
+  animation: lab-chem-node 4.2s ease-in-out infinite;
+}
+
+@keyframes lab-liquid-fall {
+  0% {
+    stroke-dashoffset: 180;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.lab-liquid-stream {
+  stroke-dasharray: 8 12;
+  animation: lab-chem-dash 2.4s linear infinite;
+}
+
+.lab-liquid-drop {
+  animation: lab-drop-y 2.1s ease-in infinite;
+}
+
+.lab-liquid-drop-2 {
+  animation-delay: 0.7s;
+}
+
+@keyframes lab-drop-y {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(90px);
+    opacity: 0;
+  }
+}

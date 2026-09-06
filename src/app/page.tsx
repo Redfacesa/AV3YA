@@ -1,8 +1,8 @@
 import Hero from '@/components/Hero';
-import NavGrid from '@/components/NavGrid';
 import NewDropSection from '@/components/NewDropSection';
 import ProductRail from '@/components/ProductRail';
-import SpecimenLooks from '@/components/SpecimenLooks';
+import LiquidDrop from '@/components/LiquidDrop';
+import LabPuzzle from '@/components/LabPuzzle';
 import WorldSection, { StorySection } from '@/components/WorldSection';
 import { fetchProducts } from '@/lib/api';
 import { fetchStorefrontContent } from '@/lib/site-content';
@@ -35,8 +35,8 @@ export default async function HomePage() {
         specimens={allProducts.reduce((n, p) => n + (p.stock_quantity ?? 1), 0) || 27}
         testing={featured.length || 5}
       />
-      <NavGrid />
-      <SpecimenLooks />
+      <LiquidDrop />
+      <LabPuzzle />
       <NewDropSection products={newDrop} />
       <ProductRail
         title="JUST ARRIVED"

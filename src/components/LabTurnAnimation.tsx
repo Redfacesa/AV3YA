@@ -12,28 +12,20 @@ type Props = {
 
 export default function LabTurnAnimation({
   className = '',
-  intervalMs = 240,
+  intervalMs = 280,
   alt = 'AV3YA Labs specimen turntable',
 }: Props) {
   const [frame, setFrame] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused) return;
     const id = window.setInterval(() => {
       setFrame((f) => (f + 1) % LAB_TURN_FRAMES.length);
     }, intervalMs);
     return () => window.clearInterval(id);
-  }, [intervalMs, paused]);
+  }, [intervalMs]);
 
   return (
-    <div
-      className={`absolute inset-0 ${className}`}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      role="img"
-      aria-label={alt}
-    >
+    <div className={`relative ${className}`} role="img" aria-label={alt}>
       {LAB_TURN_FRAMES.map((src, i) => (
         <Image
           key={src}
@@ -41,8 +33,8 @@ export default function LabTurnAnimation({
           alt=""
           fill
           priority={i === 0}
-          sizes="100vw"
-          className={`object-cover object-center transition-opacity duration-75 ${
+          sizes="(max-width: 1024px) 70vw, 420px"
+          className={`object-contain object-center transition-opacity duration-100 ${
             i === frame ? 'opacity-100' : 'opacity-0'
           }`}
         />
