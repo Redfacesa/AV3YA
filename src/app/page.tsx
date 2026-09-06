@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import NavGrid from '@/components/NavGrid';
 import NewDropSection from '@/components/NewDropSection';
 import ProductRail from '@/components/ProductRail';
+import SpecimenLooks from '@/components/SpecimenLooks';
 import WorldSection, { StorySection } from '@/components/WorldSection';
 import { fetchProducts } from '@/lib/api';
 import { fetchStorefrontContent } from '@/lib/site-content';
@@ -35,6 +36,7 @@ export default async function HomePage() {
         testing={featured.length || 5}
       />
       <NavGrid />
+      <SpecimenLooks />
       <NewDropSection products={newDrop} />
       <ProductRail
         title="JUST ARRIVED"

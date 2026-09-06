@@ -5,6 +5,7 @@ import Image from 'next/image';
 import type { FashionProduct } from '@/lib/types';
 import { fmtZar } from '@/lib/api';
 import Av3yaEnterButton from '@/components/Av3yaEnterButton';
+import LabChemistryLines from '@/components/LabChemistryLines';
 
 type Props = {
   products: FashionProduct[];
@@ -14,7 +15,8 @@ export default function NewDropSection({ products }: Props) {
   const drops = products.slice(0, 2);
 
   return (
-    <section className="relative bg-av3ya-lab py-16 lg:py-24 overflow-hidden">
+    <section className="relative bg-transparent py-16 lg:py-24 overflow-hidden">
+      <LabChemistryLines className="opacity-50" />
       <span className="vertical-label hidden xl:block" aria-hidden>
         ALL COLLECTION
       </span>

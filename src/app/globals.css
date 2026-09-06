@@ -25,7 +25,10 @@ html {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(ellipse at 8% 28%, rgba(59, 130, 246, 0.07), transparent 42%),
+    radial-gradient(ellipse at 92% 72%, rgba(236, 72, 153, 0.05), transparent 40%),
+    #f7f7f5;
   color: var(--foreground);
   font-family: var(--font-sans);
 }
@@ -121,4 +124,35 @@ body {
 }
 .theme-admin ::-webkit-scrollbar-thumb {
   background: #16a34a;
+}
+
+@keyframes lab-chem-dash {
+  to {
+    stroke-dashoffset: -180;
+  }
+}
+
+@keyframes lab-chem-node {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.15);
+  }
+}
+
+.lab-chem-flow path {
+  fill: none;
+  stroke-dasharray: 6 10;
+  animation: lab-chem-dash 18s linear infinite;
+}
+
+.lab-chem-pulse {
+  fill: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: lab-chem-node 3.6s ease-in-out infinite;
 }
