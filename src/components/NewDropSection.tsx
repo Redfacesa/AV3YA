@@ -15,7 +15,7 @@ export default function NewDropSection({ products }: Props) {
   const drops = products.slice(0, 2);
 
   return (
-    <section className="relative bg-transparent py-16 lg:py-24 overflow-hidden">
+    <section className="relative band-white border-t py-16 lg:py-24 overflow-hidden">
       <LabChemistryLines className="opacity-50" />
       <span className="vertical-label hidden xl:block" aria-hidden>
         ALL COLLECTION

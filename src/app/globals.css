@@ -25,10 +25,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(ellipse at 8% 28%, rgba(59, 130, 246, 0.07), transparent 42%),
-    radial-gradient(ellipse at 92% 72%, rgba(236, 72, 153, 0.05), transparent 40%),
-    #f7f7f5;
+  background: #000;
   color: var(--foreground);
   font-family: var(--font-sans);
 }
@@ -73,8 +70,11 @@ body {
   .glass {
     @apply bg-white border border-black/10;
   }
-  .lab-chip {
-    @apply font-mono text-[10px] tracking-[0.2em] uppercase;
+  .band-white {
+    @apply bg-white text-black border-black/10;
+  }
+  .band-black {
+    @apply bg-black text-white border-white/10;
   }
   .theme-admin .glass {
     background: rgba(255, 255, 255, 0.05);

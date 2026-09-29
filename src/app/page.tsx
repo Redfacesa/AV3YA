@@ -39,6 +39,7 @@ export default async function HomePage() {
         subtitle="Newest uploads from your catalog show here automatically."
         products={justArrived}
         max={4}
+        tone="dark"
       />
       <ProductRail
         title="FEATURED"

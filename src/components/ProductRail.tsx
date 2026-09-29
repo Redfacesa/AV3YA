@@ -14,6 +14,7 @@ type Props = {
   viewAllLabel?: string;
   emptyLabel?: string;
   max?: number;
+  tone?: 'light' | 'dark';
 };
 
 export default function ProductRail({
@@ -24,18 +25,27 @@ export default function ProductRail({
   viewAllLabel = 'VIEW ALL PRODUCTS',
   emptyLabel = 'Products you add in Admin appear here automatically.',
   max = 4,
+  tone = 'light',
 }: Props) {
   const items = products.slice(0, max);
+  const dark = tone === 'dark';
 
   return (
-    <section className="bg-av3ya-lab border-t border-black/10 py-16 lg:py-20">
+    <section className={`${dark ? 'band-black' : 'band-white'} border-t py-16 lg:py-20`}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
           <div>
-            <h2 className="font-display text-4xl sm:text-5xl text-black leading-none mb-3">{title}</h2>
-            {subtitle && <p className="text-black/45 text-sm max-w-md">{subtitle}</p>}
+            <h2 className="font-display text-4xl sm:text-5xl leading-none mb-3">{title}</h2>
+            {subtitle && (
+              <p className={`text-sm max-w-md ${dark ? 'text-white/45' : 'text-black/45'}`}>{subtitle}</p>
+            )}
           </div>
-          <Link href={viewAllHref} className="text-xs tracking-[0.25em] uppercase text-black/50 hover:text-black transition-colors">
+          <Link
+            href={viewAllHref}
+            className={`text-xs tracking-[0.25em] uppercase transition-colors ${
+              dark ? 'text-white/50 hover:text-white' : 'text-black/50 hover:text-black'
+            }`}
+          >
             {viewAllLabel} ↗
           </Link>
         </div>
@@ -45,8 +55,8 @@ export default function ProductRail({
             {items.map((product) => {
               const cover = product.images?.[0] ?? product.image_url;
               return (
-                <article key={product.id} className="drop-card group">
-                  <Link href={`/product/${product.id}`} className="block relative aspect-[3/4] overflow-hidden bg-neutral-100">
+                <article key={product.id} className={`drop-card group ${dark ? 'border-white/15 bg-black' : ''}`}>
+                  <Link href={`/product/${product.id}`} className={`block relative aspect-[3/4] overflow-hidden ${dark ? 'bg-neutral-950' : 'bg-neutral-100'}`}>
                     {cover ? (
                       <Image
                         src={cover}
@@ -71,8 +81,8 @@ export default function ProductRail({
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="aspect-[3/4] border border-black/10 bg-neutral-100 flex items-center justify-center p-4 text-center">
-                <p className="text-black/25 text-[10px] tracking-[0.15em] uppercase">{emptyLabel}</p>
+              <div key={i} className={`aspect-[3/4] border flex items-center justify-center p-4 text-center ${dark ? 'border-white/15 bg-black' : 'border-black/10 bg-neutral-100'}`}>
+                <p className={`text-[10px] tracking-[0.15em] uppercase ${dark ? 'text-white/30' : 'text-black/25'}`}>{emptyLabel}</p>
               </div>
             ))}
           </div>

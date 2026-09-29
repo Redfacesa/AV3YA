@@ -44,7 +44,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${bebas.variable} ${plex.variable} antialiased bg-av3ya-lab text-av3ya-black`}>
+      <body className={`${inter.variable} ${bebas.variable} ${plex.variable} antialiased bg-white text-black`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
