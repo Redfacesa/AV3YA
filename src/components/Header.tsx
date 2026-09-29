@@ -19,6 +19,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const itemCount = useCart((s) => s.itemCount());
+  const onFilm = pathname === '/';
 
   const closeMenu = useCallback(() => setOpen(false), []);
 
@@ -32,9 +33,15 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/70 border-b border-black/10 backdrop-blur-md">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-colors ${
+          onFilm
+            ? 'bg-black/20 border-white/10 backdrop-blur-[2px] [&_.nav-link]:text-white/70 [&_.nav-link]:hover:text-white [&_.nav-link-active]:text-white [&_.nav-utility]:text-white/75 [&_.nav-utility]:hover:text-white'
+            : 'bg-white/70 border-black/10 backdrop-blur-md'
+        }`}
+      >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16 lg:h-[72px]">
-          <Av3yaLogo variant="full" href="/" priority className="shrink-0" />
+          <Av3yaLogo variant="full" href="/" priority className={`shrink-0 ${onFilm ? 'invert' : ''}`} />
 
           <nav className="hidden lg:flex items-center gap-10 xl:gap-14">
             {NAV.map((item) => {
