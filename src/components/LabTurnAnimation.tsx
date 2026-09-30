@@ -34,7 +34,7 @@ export default function LabTurnAnimation({
           fill
           priority={i === 0}
           sizes="(max-width: 1024px) 70vw, 420px"
-          className={`object-contain object-center transition-opacity duration-100 ${
+          className={`object-cover object-top transition-opacity duration-100 ${
             i === frame ? 'opacity-100' : 'opacity-0'
           }`}
         />

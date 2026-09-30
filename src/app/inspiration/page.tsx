@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import { AV3YA_SOCIAL } from '@/lib/social';
-import { LAB_COLORWAYS, LAB_LOOKBOOK, LAB_TURN_FRAMES } from '@/lib/lab-media';
+import { LAB_ARCHIVE } from '@/lib/lab-media';
 
 export default function InspirationPage() {
-  const archive = [...LAB_TURN_FRAMES, ...LAB_COLORWAYS.map((c) => c.src), LAB_LOOKBOOK];
+  const archive = LAB_ARCHIVE;
 
   return (
     <div className="pt-24 pb-16 min-h-screen">
@@ -21,11 +21,14 @@ export default function InspirationPage() {
       </div>
 
       <div className="columns-2 md:columns-3 gap-3 px-4 sm:px-6 lg:px-10 max-w-[1400px] mx-auto">
-        {archive.map((src) => (
-          <div key={src} className="break-inside-avoid mb-3 relative aspect-[3/2] border border-black/10 overflow-hidden bg-neutral-100">
+        {archive.map((src) => {
+          const wide = src.includes('group.jpg') || src.includes('duo.jpg');
+          return (
+          <div key={src} className={`break-inside-avoid mb-3 relative border border-black/10 overflow-hidden bg-neutral-100 ${wide ? 'aspect-[3/2]' : 'aspect-[2/3]'}`}>
             <Image src={src} alt="AV3YA Labs archive" fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
